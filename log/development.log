@@ -9274,3 +9274,247 @@ Processing by HomeController#index as TURBO_STREAM
 Completed 200 OK in 21ms (Views: 16.4ms | ActiveRecord: 0.7ms | Allocations: 3808)
 
 
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-12-01 23:31:05 +0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 12ms (ActiveRecord: 1.4ms | Allocations: 1929)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 23:31:05 +0300
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 3307)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 4535)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-01 23:31:07 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 4.0ms | Allocations: 575)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 45.0ms | Allocations: 2300)
+  Rendered layout layouts/application.html.erb (Duration: 56.3ms | Allocations: 4787)
+Completed 200 OK in 65ms (Views: 61.0ms | ActiveRecord: 0.0ms | Allocations: 6218)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-01 23:31:10 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1254)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 3510)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 4261)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-01 23:31:31 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 5.8ms | Allocations: 913)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 40.9ms | Allocations: 7250)
+  Rendered layout layouts/application.html.erb (Duration: 233.6ms | Allocations: 42265)
+Completed 200 OK in 324ms (Views: 251.6ms | ActiveRecord: 2.4ms | Allocations: 66990)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-01 23:31:34 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 140)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1373)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 3741)
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 4566)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-12-01 23:31:36 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ccc123@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ccc123@mail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 440ms (ActiveRecord: 1.1ms | Allocations: 7197)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 23:31:37 +0300
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 125)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 3805)
+Completed 200 OK in 35ms (Views: 26.1ms | ActiveRecord: 0.9ms | Allocations: 4956)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-12-01 23:31:39 +0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.5ms | Allocations: 2765)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 23:31:39 +0300
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 2678)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 3044)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-01 23:31:41 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1325)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 3582)
+Completed 200 OK in 21ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 4285)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-12-01 23:31:45 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.7ms | Allocations: 232)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 228)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 2742)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 5213)
+Completed 200 OK in 35ms (Views: 30.0ms | ActiveRecord: 0.0ms | Allocations: 6753)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-12-01 23:33:08 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ccc123@mail.com", "username"=>"ccc123@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ccc123@mail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.2ms | Allocations: 577)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2678)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 5028)
+Completed 200 OK in 381ms (Views: 21.2ms | ActiveRecord: 0.8ms | Allocations: 10380)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-12-01 23:33:31 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ccc123@mail.com", "username"=>"CCC", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ccc123@mail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.6ms | Allocations: 466)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 16.3ms | Allocations: 2556)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 4915)
+Completed 200 OK in 493ms (Views: 34.1ms | ActiveRecord: 1.3ms | Allocations: 9371)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-12-01 23:33:37 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ccc123@mail.com", "username"=>"CCC", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ccc123@mail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.0ms | Allocations: 466)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2556)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 4899)
+Completed 200 OK in 402ms (Views: 24.0ms | ActiveRecord: 1.8ms | Allocations: 9358)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-12-01 23:35:48 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.5ms | Allocations: 225)
+  Rendered devise/shared/_links.html.erb (Duration: 3.8ms | Allocations: 516)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 16.4ms | Allocations: 2846)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 5668)
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 0.0ms | Allocations: 7203)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-12-01 23:36:11 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ccc123@mail.com", "username"=>"ccc12345", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ccc123@mail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.6ms | Allocations: 476)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2568)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 4918)
+Completed 200 OK in 375ms (Views: 22.7ms | ActiveRecord: 0.9ms | Allocations: 9813)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-12-01 23:36:13 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ccc123@mail.com", "username"=>"ccc12345", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ccc123@mail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.2ms | Allocations: 466)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.9ms | Allocations: 2556)
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 4899)
+Completed 200 OK in 447ms (Views: 32.4ms | ActiveRecord: 1.2ms | Allocations: 9344)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-12-01 23:36:13 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ccc123@mail.com", "username"=>"ccc12345", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ccc123@mail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.9ms | Allocations: 466)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2556)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 4899)
+Completed 200 OK in 397ms (Views: 26.4ms | ActiveRecord: 2.3ms | Allocations: 9350)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-12-01 23:36:14 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ccc123@mail.com", "username"=>"ccc12345", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ccc123@mail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 466)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2556)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 4899)
+Completed 200 OK in 392ms (Views: 23.2ms | ActiveRecord: 2.1ms | Allocations: 9339)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-12-01 23:36:14 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ccc123@mail.com", "username"=>"ccc12345", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ccc123@mail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.3ms | Allocations: 466)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2556)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 4899)
+Completed 200 OK in 384ms (Views: 24.7ms | ActiveRecord: 3.2ms | Allocations: 9351)
+
+
