@@ -9193,3 +9193,84 @@ Migrating to AddUsernameIndex (20221201194345)
   [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles" for 127.0.0.1 at 2022-12-01 23:20:01 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/index.html.erb within layouts/application (Duration: 39.8ms | Allocations: 15733)
+  Rendered layout layouts/application.html.erb (Duration: 737.4ms | Allocations: 50824)
+Completed 200 OK in 900ms (Views: 757.8ms | ActiveRecord: 6.0ms | Allocations: 82884)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-12-01 23:20:06 +0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.9ms | Allocations: 2936)
+
+
+  
+NoMethodError (undefined method `for' for #<Devise::ParameterSanitizer:0x00007f0e800a9688 @auth_keys=[:email], @params=#<ActionController::Parameters {"_method"=>"delete", "controller"=>"devise/sessions", "action"=>"destroy"} permitted: false>, @resource_name=:user, @permitted={:sign_in=>[:email, :password, :remember_me], :sign_up=>[:email, :password, :password_confirmation], :account_update=>[:email, :password, :password_confirmation, :current_password]}>):
+  
+app/controllers/application_controller.rb:8:in `configure_permitted_parameters'
+Started GET "/articles" for 127.0.0.1 at 2022-12-01 23:24:32 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/index.html.erb within layouts/application (Duration: 29.7ms | Allocations: 15733)
+  Rendered layout layouts/application.html.erb (Duration: 207.5ms | Allocations: 50830)
+Completed 200 OK in 317ms (Views: 213.5ms | ActiveRecord: 5.3ms | Allocations: 82894)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-12-01 23:24:37 +0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 29ms (ActiveRecord: 1.0ms | Allocations: 3676)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 23:24:37 +0300
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 125)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 3023)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.0ms | Allocations: 4177)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-01 23:24:41 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/art/.rvm/gems/ruby-3.0.1/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/art/.rvm/gems/ruby-3.0.1/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 4.6ms | Allocations: 905)
+  Rendered /home/art/.rvm/gems/ruby-3.0.1/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 120.7ms | Allocations: 6837)
+  Rendered layout layouts/application.html.erb (Duration: 133.6ms | Allocations: 9301)
+Completed 200 OK in 143ms (Views: 139.0ms | ActiveRecord: 0.0ms | Allocations: 10952)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-12-01 23:24:44 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ccc123@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ccc123@mail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 378ms (ActiveRecord: 1.0ms | Allocations: 5083)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 23:24:45 +0300
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 3437)
+Completed 200 OK in 21ms (Views: 16.4ms | ActiveRecord: 0.7ms | Allocations: 3808)
+
+
