@@ -51,10 +51,11 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 group :test, :development do 
 
-gem "debug", platforms: %i[ mri mingw x64_mingw ] 
-gem 'rspec-rails'
-gem 'shoulda-matchers'
-gem 'capybara'
+  gem "debug", platforms: %i[ mri mingw x64_mingw ] 
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem "factory_bot_rails"
 
 end
 
