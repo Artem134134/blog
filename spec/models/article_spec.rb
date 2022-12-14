@@ -10,7 +10,7 @@ describe Article do
     it { should have_many :comments }
   end
 
-  describe "subject" do
+  describe "#subject" do
     it "returns the article title" do 
       # creating an article object in a tricky way!
       article = create(:article, title: 'Bla bla')
