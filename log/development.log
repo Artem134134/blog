@@ -12170,3 +12170,33 @@ FOREIGN KEY ("article_id")
   [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-12-14 23:46:13 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 444)
+  Rendered layout layouts/application.html.erb (Duration: 205.3ms | Allocations: 35896)
+Completed 200 OK in 250ms (Views: 215.0ms | ActiveRecord: 0.0ms | Allocations: 45147)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-12-14 23:46:25 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/index.html.erb within layouts/application (Duration: 37.0ms | Allocations: 16520)
+  Rendered layout layouts/application.html.erb (Duration: 52.2ms | Allocations: 19301)
+Completed 200 OK in 75ms (Views: 54.2ms | ActiveRecord: 2.3ms | Allocations: 23021)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2022-12-14 23:46:40 +0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 23.1ms | Allocations: 3915)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 6452)
+Completed 200 OK in 44ms (Views: 39.4ms | ActiveRecord: 0.0ms | Allocations: 7498)
+
+
