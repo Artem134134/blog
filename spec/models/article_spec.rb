@@ -6,6 +6,13 @@ describe Article do
     it { should validate_presence_of :title}
   end
 
+  describe "validations_length" do
+    it {should validate_length_of :text }
+    it {should validate_length_of :title}
+  end
+
+  
+
   describe "associations" do
     it { should have_many :comments }
   end
@@ -29,4 +36,7 @@ describe Article do
       expect(article.last_comment.body).to eq "comment body 3"
     end
   end
+
+  
+    
 end
