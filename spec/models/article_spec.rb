@@ -19,4 +19,14 @@ describe Article do
       expect(article.subject).to eq 'Bla bla'
     end  
   end
+
+  describe "#last_comment" do 
+    it "returns the last comment" do 
+      # creating an article but now with comments
+      article = create(:article_with_comments)
+
+      # verification 
+      expect(article.last_comment.body).to eq "comment body 3"
+    end
+  end
 end

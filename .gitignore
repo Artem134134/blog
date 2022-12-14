@@ -3,3 +3,5 @@
 tmp
 debug.log
 log/test.log
+test.log
+tmp/cache/bootsnap/compile-cache-ise/
