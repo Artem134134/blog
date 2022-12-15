@@ -12247,3 +12247,12 @@ Processing by ContactsController#create as HTML
 Completed 200 OK in 74ms (Views: 31.9ms | ActiveRecord: 2.6ms | Allocations: 22654)
 
 
+Started GET "/contacts" for 127.0.0.1 at 2022-12-15 23:44:09 +0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 759)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 3052)
+Completed 200 OK in 19ms (Views: 15.4ms | Allocations: 3367)
+
+
