@@ -10,6 +10,7 @@ feature "Creating Contact" do
   
   scenario "allows a guest to create contact" do 
     visit new_contacts_path
+    
     fill_in :contact_email, :with => 'user@example.com'
     fill_in :contact_message, :with => 'Bla bla car'
 
