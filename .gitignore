@@ -1,9 +1,6 @@
-.log
-.log
-tmp
-debug.log
-log/test.log
-test.log
-tmp/cache/bootsnap/compile-cache-ise/
-log/development.log
-.cache
+ log/test.log
+ log/development.log
+tmp/pids/server.pid
+tmp/cache/bootsnap/compile-cache-iseq/
+tmp/cache/assets/sprockets/
+tmp/cache/bootsnap/compile-cache-yaml/e8/71d35ba926593d

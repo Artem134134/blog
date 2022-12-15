@@ -12200,3 +12200,50 @@ Processing by ContactsController#new as HTML
 Completed 200 OK in 44ms (Views: 39.4ms | ActiveRecord: 0.0ms | Allocations: 7498)
 
 
+Started GET "/" for 127.0.0.1 at 2022-12-15 22:55:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 444)
+  Rendered layout layouts/application.html.erb (Duration: 273.7ms | Allocations: 36035)
+Completed 200 OK in 315ms (Views: 285.0ms | ActiveRecord: 0.0ms | Allocations: 45286)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2022-12-15 22:55:11 +0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 23.6ms | Allocations: 3947)
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 6486)
+Completed 200 OK in 45ms (Views: 40.0ms | ActiveRecord: 0.0ms | Allocations: 7534)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2022-12-15 23:35:54 +0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 26.2ms | Allocations: 2668)
+  Rendered layout layouts/application.html.erb (Duration: 73.8ms | Allocations: 16844)
+Completed 200 OK in 97ms (Views: 87.0ms | Allocations: 21143)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2022-12-15 23:36:37 +0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1328)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 4218)
+Completed 200 OK in 31ms (Views: 26.8ms | Allocations: 5388)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2022-12-15 23:36:48 +0300
+Processing by ContactsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"email"=>"", "message"=>""}, "commit"=>"Send message"}
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 15.7ms | Allocations: 3095)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 5588)
+Completed 200 OK in 74ms (Views: 31.9ms | ActiveRecord: 2.6ms | Allocations: 22654)
+
+

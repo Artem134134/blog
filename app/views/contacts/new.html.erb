@@ -8,7 +8,7 @@
 
       <body>
 
-      <h2>Contact us</h2>
+      <h2><%= t('contacts.contact_us') %> </h2><br />
 
       <%= form_for :contact, url: contacts_path, data: {turbo:false} do |f|%>
         <% if @contact && @contact.errors.any? %>
