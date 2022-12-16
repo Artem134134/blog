@@ -55,7 +55,8 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'capybara'
-  gem "factory_bot_rails"
+  gem 'factory_bot_rails'
+  
 
 end
 
@@ -75,4 +76,5 @@ group :test do
   
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'database_cleaner'
 end

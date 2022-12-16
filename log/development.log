@@ -13345,3 +13345,92 @@ puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.5) lib/puma/server.rb:443:in `process_client'
 puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-12-17 00:20:55 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 444)
+  Rendered layout layouts/application.html.erb (Duration: 202.3ms | Allocations: 35905)
+Completed 200 OK in 238ms (Views: 211.0ms | ActiveRecord: 0.0ms | Allocations: 45156)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-12-17 00:21:03 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/index.html.erb within layouts/application (Duration: 34.7ms | Allocations: 16517)
+  Rendered layout layouts/application.html.erb (Duration: 48.2ms | Allocations: 19302)
+Completed 200 OK in 68ms (Views: 49.8ms | ActiveRecord: 2.4ms | Allocations: 23022)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-12-17 00:21:08 +0300
+Processing by ArticlesController#new as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-17 00:21:08 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 6.2ms | Allocations: 905)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 24.9ms | Allocations: 4533)
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 7029)
+Completed 200 OK in 77ms (Views: 41.5ms | ActiveRecord: 1.9ms | Allocations: 24807)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-17 00:21:18 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1268)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 3530)
+Completed 200 OK in 23ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 4321)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-12-17 00:21:23 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ccc123@mail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ccc123@mail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/articles/new
+Completed 302 Found in 605ms (ActiveRecord: 2.9ms | Allocations: 8132)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-12-17 00:21:23 +0300
+Processing by ArticlesController#new as TURBO_STREAM
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1225)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 3640)
+Completed 200 OK in 31ms (Views: 19.9ms | ActiveRecord: 0.9ms | Allocations: 5541)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-12-17 00:21:59 +0300
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 990)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 3824)
+Completed 200 OK in 36ms (Views: 23.8ms | ActiveRecord: 0.8ms | Allocations: 6344)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-17 00:22:20 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 126)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 3756)
+Completed 200 OK in 27ms (Views: 22.5ms | ActiveRecord: 0.8ms | Allocations: 4718)
+
+
+Started GET "/yi" for 127.0.0.1 at 2022-12-17 00:22:25 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/yi"):
+  
