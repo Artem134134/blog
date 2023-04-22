@@ -1,7 +1,4 @@
-##  Blog 
----
-
-### The application for writing posts and editing them with user authentication.
+##  Blog - the application for writing posts and editing them with user authentication.
 ---
 #### Technologies:
 * Ruby '3.0.1'
@@ -12,3 +9,7 @@
 * Rspec-rails
 * Capybara
 * Debug
+---
+#### Employment:
+* To get started, you need to clone the repository with the command
+ `git clone https://github.com/Artem134134/blog.git `
