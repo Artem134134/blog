@@ -25,7 +25,7 @@
 3. Use `Ctrl-C` to stop
 ---
 ### Testing. 
-_ Our project is partially covered by unit tests._
+_Our project is partially covered by unit tests._
 
  * gem 'debug', 
  * gem 'rspec-rails'
