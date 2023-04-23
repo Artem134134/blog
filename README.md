@@ -27,7 +27,7 @@
 ### Testing. 
 _Our project is partially covered by unit tests._
 
- * gem 'debug', 
+ * gem 'debug', [tutorial here](https://edgeguides.rubyonrails.org/debugging_rails_applications.html)
  * gem 'rspec-rails'
  * gem 'shoulda-matchers'
  * gem 'capybara'
