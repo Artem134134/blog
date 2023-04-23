@@ -13781,3 +13781,51 @@ Processing by ArticlesController#edit as HTML
 Completed 200 OK in 62ms (Views: 45.9ms | ActiveRecord: 1.7ms | Allocations: 8793)
 
 
+Started GET "/" for 127.0.0.1 at 2023-04-23 09:33:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 444)
+  Rendered layout layouts/application.html.erb (Duration: 215.6ms | Allocations: 36150)
+Completed 200 OK in 257ms (Views: 225.3ms | ActiveRecord: 0.0ms | Allocations: 45400)
+
+
+Started GET "/articles" for 127.0.0.1 at 2023-04-23 09:34:16 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/index.html.erb within layouts/application (Duration: 36.3ms | Allocations: 16513)
+  Rendered layout layouts/application.html.erb (Duration: 51.3ms | Allocations: 19281)
+Completed 200 OK in 74ms (Views: 52.6ms | ActiveRecord: 2.9ms | Allocations: 22999)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2023-04-23 09:34:44 +0300
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 22.1ms | Allocations: 4017)
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | Allocations: 6556)
+Completed 200 OK in 41ms (Views: 35.8ms | ActiveRecord: 0.0ms | Allocations: 7602)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-23 09:35:50 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 2474)
+Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 2834)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-23 09:40:17 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 2406)
+Completed 200 OK in 20ms (Views: 17.0ms | Allocations: 2718)
+
+

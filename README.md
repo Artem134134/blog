@@ -18,3 +18,7 @@
 5. Still need to install these packages `sudo apt-get install zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs yarn -y`
 6. Rails installation `gem install rails -v 7.0.4`
 ---
+#### Starting Development Server:
+1. Open the console in the project directory and enter the command: `rails server` or `rails s`
+2. Open a browser and type in the search bar `localhost:3000`
+3. Use `Ctrl-C` to stop
