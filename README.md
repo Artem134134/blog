@@ -27,8 +27,8 @@
 ### Testing. 
 _Our project is partially covered by unit tests._
 
- * gem 'debug', [tutorial here](https://edgeguides.rubyonrails.org/debugging_rails_applications.html)
- * gem 'rspec-rails'
- * gem 'shoulda-matchers'
- * gem 'capybara'
- * gem 'factory_bot_rails'
+ * gem 'debug',  [=> tutorial here](https://edgeguides.rubyonrails.org/debugging_rails_applications.html)
+ * gem 'rspec-rails'  [=> tutorial here](https://github.com/rspec/rspec-rails)
+ * gem 'shoulda-matchers'  [=> tutorial here](https://github.com/thoughtbot/shoulda-matchers)
+ * gem 'capybara'  [=> tutorial here](https://github.com/teamcapybara/capybara)
+ * gem 'factory_bot_rails'  [=> tutorial here](https://github.com/thoughtbot/factory_bot_rails)
