@@ -13829,3 +13829,52 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 20ms (Views: 17.0ms | Allocations: 2718)
 
 
+Started GET "/articles/" for 127.0.0.1 at 2024-03-12 11:39:59 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/index.html.erb within layouts/application (Duration: 122.6ms | Allocations: 10008)
+  Rendered layout layouts/application.html.erb (Duration: 6815.6ms | Allocations: 109325)
+Completed 200 OK in 8210ms (Views: 6907.0ms | ActiveRecord: 67.1ms | Allocations: 124366)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2024-03-12 11:40:13 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 804)
+  Rendered layout layouts/application.html.erb (Duration: 222.1ms | Allocations: 4570)
+Completed 200 OK in 236ms (Views: 223.8ms | ActiveRecord: 0.3ms | Allocations: 4829)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2024-03-12 11:40:28 +0300
+Processing by ArticlesController#new as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 280)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-03-12 11:40:28 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 6.2ms | Allocations: 559)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 336.9ms | Allocations: 18231)
+  Rendered layout layouts/application.html.erb (Duration: 382.8ms | Allocations: 19486)
+Completed 200 OK in 551ms (Views: 426.6ms | ActiveRecord: 1.5ms | Allocations: 30030)
+
+
+Started GET "/articles/" for 127.0.0.1 at 2024-03-12 11:43:00 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/index.html.erb within layouts/application (Duration: 37.9ms | Allocations: 3895)
+  Rendered layout layouts/application.html.erb (Duration: 279.9ms | Allocations: 19191)
+Completed 200 OK in 330ms (Views: 261.5ms | ActiveRecord: 29.5ms | Allocations: 22078)
+
+
