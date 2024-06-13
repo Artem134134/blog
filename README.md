@@ -4,6 +4,15 @@
 * Ruby 
 * Rails 
 * Node JS
+* HTML
+* CSS
+* css bootstrap 
+---
+### DB
+* SQLite3
+---
+### Authentication
+* gem device
 ---
 ### Tests:
 * Rspec-rails
