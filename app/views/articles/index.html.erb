@@ -6,8 +6,14 @@
 
   </head>
       <body>
-
-      <h2>List of articles</h2> <br />
+  
+  <nav>
+      <%= link_to 'Contact Us!', new_contacts_path(@contacts) %> |
+      <%= link_to 'About', about_path(@about) %> |
+      <%= link_to 'Terms', terms_path(@terms) %> |
+  </nav>
+  <br>
+      <h2>List of articles</h2> <br>
 
       <% @articles.each do |article| %>
 
