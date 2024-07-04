@@ -14,23 +14,26 @@
   </nav>
   <br>
       <h2>List of articles</h2> <br>
-
+    <div>
       <% @articles.each do |article| %>
 
         <p><%= article.id %></p>
         <p><strong><%= article.title %></strong></p>
         <p><%= article.text %></p>
-
-        <br />
+        <br>
+        
         <nav>
           <%= link_to 'Show', article_path(article) %> |
-          <%= link_to 'Edit', edit_article_path(article) %> |
-          <%= link_to 'Delete', article_path(article), data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?'} %>
-        </nav>
-        
+          <%= link_to 'Edit', edit_article_path(article) %> |  
+        </nav> 
 
-      <hr />
-      <% end %>
+        <%= button_to 'Delete', article_path(article), method: :delete, data: { 'turbo-confirm': 'Are you sure?'} %> 
+      
+      <% end %>  
+    </div>    
+     
+  
+  
 
       
       </body> 
