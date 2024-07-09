@@ -10,7 +10,7 @@
 
       <h2>Edit article</h2>
 
-      <%= form_with model: @article, local: true do |f| %>
+      <%= form_with model: @article, data: {turbo: false} do |f| %>
         <p>
           <%= f.label :title %><br />
           <%= f.text_field :title, size: "47x1" %>
@@ -23,7 +23,7 @@
 
           
         <p>
-          <%= f.submit ('Submit changes')%>
+          <%= f.submit ('Save')%>
         </p>
 
       <% end %>
