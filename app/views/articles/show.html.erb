@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
+  <h2><%= @article.title %></h2> 
 
-    <title>Show comment</title>
-
-  </head>
-
-      <body>
-
-      <h2><%= @article.title %></h2> 
-      <p><strong> <%= @article.text %></strong></p><hr /> 
+  <p><strong><%= @article.text %></strong></p><hr> 
 
       <h3>Comments</h3>
 
       <% @article.comments.each do |comment| %>
+      <div>
         <p><i>№ <%= comment.id %></i></p>
         <p><i><%= comment.author %> said:</i></p>
         <p><i><%= comment.body %> </i> </p>
+      </div>
       <% end %>
       
 
       <h4>Add comment</h4><hr /> 
-
-      <p>    
-      <%= form_for([@article, @article.comments.build])   do |f| %>
+    
+      <%= form_for([@article, @article.comments.build]) do |f| %>
+      <div>  
         <p>
           <%= f.label :author %><br />
           <%= f.text_field :author, size: "47x1"%>
@@ -38,9 +31,6 @@
           <%= f.submit 'Save comment'%>
         </p>
 
+      </div>
       <% end %>
-      </p>
-
       
-      </body> 
-</html>
