@@ -11,13 +11,14 @@ class ArticlesController < ApplicationController
   end
 
   def new 
+    @article  = Article.new
   end
 
   def create
     @article  = Article.new(article_params)
 
     if @article.save
-       redirect_to @article
+       redirect_to articles_path
     else
       render action: 'new'
     end
@@ -31,7 +32,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.update(article_params)
-       redirect_to @article
+       redirect_to articles_path
     else
       render action: 'edit'
     end
