@@ -1,9 +1,10 @@
-log/test.log
-db/development.sqlite3
 tmp/
 tmp/pids/server.pid
 tmp/cache/bootsnap/compile-cache-iseq/
 tmp/cache/assets/sprockets/
 tmp/cache/bootsnap/compile-cache-yaml/e8/71d35ba926593d
 test.sqlite3
+db/development.sqlite3
+db/development.sqlite3-shm
+db/development.sqlite3-wal
 log/development.log
