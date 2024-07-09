@@ -17,7 +17,6 @@
     <div>
       <% @articles.each do |article| %>
 
-        <p><%= article.id %></p>
         <p><strong><%= article.title %></strong></p>
         <p><%= article.text %></p>
         <br>
@@ -27,11 +26,10 @@
           <%= link_to 'Edit', edit_article_path(article) %> |  
         </nav> 
 
-        <%= button_to 'Delete', article_path(article), method: :delete, data: { 'turbo-confirm': 'Are you sure?'} %> 
-      
-      <% end %>  
+        <%= button_to 'Delete', article_path(article), method: :delete, data: { 'turbo-confirm': 'Are you sure?'} %>      
+        <hr>
     </div>    
-     
+    <% end %>  
   
   
 
