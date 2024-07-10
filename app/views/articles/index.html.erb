@@ -4,7 +4,7 @@
     <%= link_to 'Terms', terms_path(@terms) %> |
   </nav>
   <br>
-      <h2>List of articles</h2> <br>
+      <h2>List of articles</h2> 
    
       <% @articles.each do |article| %>
       <div>
@@ -21,7 +21,11 @@
           <%= link_to 'Delete', article_path(article),
           data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %> 
         </nav> 
-
         <hr>
     </div>    
     <% end %>
+    
+    <div>
+      <p><strong>New Article</strong></p>
+      <p><%= render 'form_article', article: @article %></p>
+    </div>
