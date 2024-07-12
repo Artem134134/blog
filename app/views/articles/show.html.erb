@@ -1,25 +1,26 @@
-  <h2><%= @article.title %></h2> 
+  <h3><%= @article.title %></h3> 
 
   <p><strong><%= @article.text %></strong></p> 
-  <time datetime="<%= @article.formatted_created_at %>">
-		      <%= @article.formatted_created_at %></time>
+
+  <time datetime="<%= @article.formatted_created_at %>"><small>
+		<%= @article.formatted_created_at %></small></time>
     <hr>      
-    <br>
+    
 
       <h3>Comments</h3>
-
+      <br>
       <% @article.comments.each do |comment| %>
       <div>
-        <p><i>#<%= comment.id %></i></p>
         <p><i>Author  <strong><%= comment.author %></strong></i></p>
         <p><i><%= comment.body %></i></p>
-        
+
+        <time datetime="<%= comment.formatted_created_on %>"><small>
+		    <%= comment.formatted_created_on %></small></time> 
       </div>
-
+      <hr> 
       <% end %>
-      
-
-      <h4>Add comment</h4><hr /> 
+          
+      <h4>Add comment</h4>
     
       <%= form_for([@article, @article.comments.build]) do |f| %>
       <div>  
