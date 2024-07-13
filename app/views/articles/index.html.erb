@@ -3,9 +3,8 @@
     <%= link_to 'About', about_path(@about) %> |
     <%= link_to 'Terms', terms_path(@terms) %> |
   </nav>
-  <br>
-      <h2>List of articles</h2> 
-   
+  <br> 
+    <h2>List of <span class="badge rounded-pill text-bg-secondary">articles</span></h2>
       <% @articles.each do |article| %>
       <div>
         <p><strong><%= article.title %></strong></p>
@@ -26,6 +25,6 @@
     <% end %>
     
     <div>
-      <p><strong>New Article</strong></p>
+      <h3>Article <span class="badge rounded-pill text-bg-secondary">New</span></h3>
       <p><%= render 'form_article', article: @article %></p>
     </div>
