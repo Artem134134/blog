@@ -1,4 +1,17 @@
+
+
 <%= form_with model: @article, data: {turbo: false} do |f| %>
+  <% if @article && @article.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+          <ul class="mb-0">
+          <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+          <% end %>
+
+
   <p>
     <%= f.label :title %><br />
     <%= f.text_field :title, size: "47x1" %>
