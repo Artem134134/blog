@@ -1,7 +1,7 @@
 
   <h2><%= t('contacts.contact_us') %> </h2><br />
 
-    <%= form_for :contact, url: contacts_path, data: {turbo:false} do |f|%>
+    <%= form_with model: @contact, data: {turbo: false} do |f|%>
       <% if @contact && @contact.errors.any? %>
         <div class="alert alert-danger" role="alert">
           <ul class="mb-0">
