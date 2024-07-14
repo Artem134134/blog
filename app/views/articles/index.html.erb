@@ -5,7 +5,7 @@
     <%= link_to 'Terms', terms_path(@terms), class: 'btn btn-outline-secondary' %>   
     </div>
   <br> 
-    <h2>List of <span class="badge rounded-pill text-bg-secondary">articles</span></h2>
+    <h3>List of <span class="badge rounded-pill text-bg-secondary">articles</span></h3>
     <article> 
     <% @articles.each do |article| %>
       <div>
@@ -28,6 +28,6 @@
     <% end %>
     
     <div>
-      <h3>Article <span class="badge rounded-pill text-bg-secondary">New</span></h3>
+      <h4>Article <span class="badge rounded-pill text-bg-secondary">New</span></h4>
       <p><%= render 'form_article', article: @article %></p>
     </div>
