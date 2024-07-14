@@ -1,5 +1,5 @@
 
-  <h3><%= t('contacts.contact_us') %> </h3><br />
+  <h3><span class="badge rounded-pill text-bg-secondary"><%= t('contacts.contact_us') %></span></h3><br>
 
     <%= form_with model: @contact, data: {turbo: false} do |f|%>
       <% if @contact && @contact.errors.any? %>
@@ -23,8 +23,9 @@
           <%= f.text_area :message %>
         </p>
 
-        <p>
-          <%= f.submit 'Send message' %>
-        </p>        
-
+        <nav>
+          <%= f.submit 'Send message', class: 'btn btn-outline-primary btn-sm' %>
+          <%= link_to 'Back', articles_path, class: 'btn btn-outline-light btn-sm' %>  
+        </nav>
+      
       <% end %>
