@@ -1,21 +1,20 @@
- 
-  <div class="btn-group btn-group-sm mb-3" role="group" aria-label="Small button group"> 
-    <%= link_to 'Contact Us!', new_contacts_path(@contact), class: 'btn btn-outline-secondary' %>
-    <%= link_to 'About', about_path(@about), class: 'btn btn-outline-secondary' %>
-    <%= link_to 'Terms', terms_path(@terms), class: 'btn btn-outline-secondary' %>   
-    </div>
+   
+<nav class=" gap-3 d-flex flex-wrap align-items-center justify-content-center ">   
+    <%= link_to 'Contact Us', new_contacts_path(@contact), class: 'link-secondary' %>
+    <%= link_to 'About', about_path(@about), class: 'link-secondary' %>
+    <%= link_to 'Terms', terms_path(@terms), class: 'link-secondary' %>    
+</nav
   <br> 
+  <br>
     <h3>List of <span class="badge rounded-pill text-bg-secondary">articles</span></h3>
     <article> 
     <% @articles.each do |article| %>
-      <div>
+      <div>     
         <p><strong><%= article.title %></strong></p>
         <p><%= article.text %></p>
         <time datetime="<%= article.formatted_created_at %>"><small>
 		      <%= article.formatted_created_at %></small></time>
-          <br>
-          <br>
-        
+                   
         <nav>
           <%= link_to 'Show', article_path(article), class: 'btn btn-outline-info btn-sm' %>  
           <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-outline-warning btn-sm' %>  
@@ -23,6 +22,7 @@
           data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %> 
         </nav> 
         <hr>
+        
     </div> 
     </article>    
     <% end %>
