@@ -10,26 +10,30 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">   
   </head>
 
-  <body>
+  <body >
+    <div class="container d-flex flex-wrap">  
+      <nav class=" ">  
+      <% if user_signed_in? %>
+    
+      <p> &copy; <%= current_user.email %>
+        <%= link_to "Sign Out", destroy_user_session_path, class: 'btn btn-outline-secondary btn-sm', data: {'turbo-method': :delete} %>  
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path, class: 'btn btn-outline-secondary btn-sm' %>
+      </p>     
+      </nav> 
+    
   
-  <p>
-  <% if user_signed_in? %>
-      &copy; <%= current_user.email %> | <%= link_to "Sign Out", destroy_user_session_path, data: {'turbo-method': :delete} %>  
-    <% else %>
-      <%= link_to "Sign In", new_user_session_path %>
-  </p>
-<% end %>
-
+    <% end %>
+ 
     <div>          
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </div>
 
     <%= yield %>
-
+    </div>
   </body>
 </html>
