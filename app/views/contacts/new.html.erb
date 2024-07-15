@@ -2,15 +2,8 @@
   <h3><span class="badge rounded-pill text-bg-secondary"><%= t('contacts.contact_us') %></span></h3><br>
 
     <%= form_with model: @contact, data: {turbo: false} do |f|%>
-      <% if @contact && @contact.errors.any? %>      
-        <div class="alert alert-danger" role="alert">
-          <ul class="mb-0">
-          <% @contact.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
-          <% end %>
+      <%= render 'shared/errors', object: @contact %>
+      
         
         <p class="mt-1 ">
           <%= f.label :email %><br>
