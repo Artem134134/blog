@@ -6,7 +6,7 @@
 </nav>
 <br>
 
-  <h3 class="mb-6">List of <span class="badge rounded-pill text-bg-secondary">articles</span></h3>
+  <h3 class="mb-4">List of <span class="badge rounded-pill text-bg-secondary">articles</span></h3>
     <article> 
     <% @articles.each do |article| %>
       <div >         
@@ -15,7 +15,7 @@
         <time datetime="<%= article.formatted_created_at %>"><small>
 		      <%= article.formatted_created_at %></small></time>
                    
-        <nav class="mb-4 mt-2">
+        <nav class="mb-5 mt-3">
           <%= link_to 'Show', article_path(article), class: 'btn btn-outline-info btn-sm me-1' %>  
           <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-outline-warning btn-sm me-1' %>  
           <%= link_to 'Delete', article_path(article), class: 'btn btn-outline-danger btn-sm',
@@ -25,7 +25,7 @@
     </article>    
     <% end %>
     
-    <div>
-      <h4>Article <span class="badge rounded-pill text-bg-secondary">New</span></h4>
+    <div >
+      <h4 >Article <span class="badge rounded-pill text-bg-secondary">New</span></h4>
       <p><%= render 'form_article', article: @article %></p>
     </div>
