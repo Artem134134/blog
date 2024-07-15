@@ -2,30 +2,30 @@
   <h3><span class="badge rounded-pill text-bg-secondary"><%= t('contacts.contact_us') %></span></h3><br>
 
     <%= form_with model: @contact, data: {turbo: false} do |f|%>
-      <% if @contact && @contact.errors.any? %>
-      
+      <% if @contact && @contact.errors.any? %>      
         <div class="alert alert-danger" role="alert">
           <ul class="mb-0">
           <% @contact.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+            <li><%= msg %></li>
           <% end %>
           </ul>
         </div>
           <% end %>
         
-        <p>
-          <%= f.label :email %><br />
-          <%= f.text_field :email %>
+        <p class="mt-1 ">
+          <%= f.label :email %><br>
+          <%= f.text_field :email, size: "47x1" %>
         </p>
 
-        <p>
-          <%= f.label :message %><br />
-          <%= f.text_area :message %>
+        <p class="mt-3 ">
+          <%= f.label :message %><br>
+          <%= f.text_area :message, size: "50x2" %>
         </p>
 
-        <nav>
-          <%= f.submit 'Send message', class: 'btn btn-outline-primary btn-sm' %>
-          <%= link_to 'Back', articles_path, class: 'btn btn-outline-light btn-sm' %>  
+        <nav class="mt-3">
+          <%= f.submit 'Send message', class: 'btn btn-outline-primary btn-sm me-1' %>
+          <%= link_to 'Cancel', new_contacts_path, class: 'btn btn-outline-light btn-sm me-1' %> 
+          <%= link_to 'Back', articles_path, class: 'btn btn-outline-secondary btn-sm' %>          
         </nav>
       
       <% end %>
