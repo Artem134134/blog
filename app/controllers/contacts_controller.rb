@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
       @contact = Contact.new(contact_params)
     if @contact.valid?
        @contact.save
+       flash[:success] = "Your form has been submitted!"
        redirect_to root_path
     else
       render action: 'new'
