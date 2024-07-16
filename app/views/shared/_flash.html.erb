@@ -1,7 +1,3 @@
-<% if flash.any? %>
-  <% flash.each do |type, message| %>
-    <%= content_tag :div, message, class: "alert alert-#{bootstrap_alert_class(type)} alert-dismissible fade show", role: 'alert' do %>
-      <%= content_tag :button, '', type: 'button', class: 'btn-close', data: { bs_dismiss: 'alert' }, aria: { label: 'Close' } %>
-    <% end %>
-  <% end %>
+<% flash.each do |k, v| %>
+  <%= tag.div v, class: "alert alert-#{k}", role: 'alert' %>
 <% end %>
