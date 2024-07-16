@@ -29,15 +29,12 @@
       <% end %>
      
 
-      <div>          
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      </div>
-    </div>
-
-    <div class="container">  
+      <main class="container mt-3">
+      <% flash.each do |k, v| %>     
+        <%= tag.div v, class: "alert alert-#{k}", role: 'alert' %>   
+      <% end %> 
 
     <%= yield %>
-    </div>
+    </main>      
   </body>
 </html>
