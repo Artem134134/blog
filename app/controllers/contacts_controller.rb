@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
        flash[:success] = "Your form has been submitted!"
        redirect_to root_path
     else
-      render action: 'new'
+      render :new
     end
   end
 

@@ -4,7 +4,7 @@
   <%= render 'shared/errors', object: @article %>
 
   <div class="mb-3 row">
-    <%= f.label :title, class: 'col-sm-1 col-form-label' %>
+    <%= f.label :title, class: 'fst-italic col-sm-2 col-form-label' %>
 
     <div class="col-sm-10">
       <%= f.text_field :title, class: 'form-control' %>
@@ -12,19 +12,19 @@
   </div>
 
   <div class="mb-3 row">
-    <%= f.label :text, class: 'col-sm-1 col-form-label' %>
+    <%= f.label :text, class: 'fst-italic col-sm-2 col-form-label' %>
   
     <div class="col-sm-10">
       <%= f.text_area :text , class: 'form-control' %>
     </div>  
   </div>
-  
-  <div class="me-5 row">
-    <div class="col-sm-10"></div>
-    <div class="col-sm-2 text-end">
-      <nav class="ms-0"> 
-        <%= f.submit ' Save ', class: ' btn btn-outline-primary btn-sm'%>   
-      </nav>   
+
+  <div class="row">
+    <div class="col-sm-8"></div>
+      <div class="col-sm-4">
+        <div class="d-flex justify-content-end mt-0 mb-3">
+          <%= f.submit 'Save article', class: 'btn btn-outline-primary btn-sm' %>
+      </div>
     </div>
   </div>
 
