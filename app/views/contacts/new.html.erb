@@ -1,24 +1,38 @@
 
-  <h3><span class="badge rounded-pill text-bg-secondary"><%= t('contacts.contact_us') %></span></h3><br>
+  <h3><span class="badge rounded-pill text-bg-secondary mb-3"><%= t('contacts.contact_us') %></span></h3>
 
     <%= form_with model: @contact, data: {turbo: false} do |f|%>
       <%= render 'shared/errors', object: @contact %>
       
-        
-        <p class="mt-1 ">
-          <%= f.label :email %><br>
-          <%= f.text_field :email, size: "47x1" %>
-        </p>
+      <div class="mb-3 row">
+        <%= f.label :email, class: 'fst-italic col-sm-2 col-form-label' %>
+    
+        <div class="col-sm-10">
+          <%= f.text_area :email , class: 'form-control' %>
+        </div>  
+      </div>
 
-        <p class="mt-3 ">
-          <%= f.label :message %><br>
-          <%= f.text_area :message, size: "50x2" %>
-        </p>
+      <div class="mb-3 row">
+        <%= f.label :message, class: 'fst-italic col-sm-2 col-form-label' %>
 
-        <nav class="mt-3">
-          <%= f.submit 'Send message', class: 'btn btn-outline-primary btn-sm me-1' %>
-          <%= link_to 'Cancel', new_contacts_path, class: 'btn btn-outline-light btn-sm me-1' %> 
-          <%= link_to 'Back', articles_path, class: 'btn btn-outline-secondary btn-sm' %>          
-        </nav>
-      
+        <div class="col-sm-10">
+          <%= f.text_field :message, class: 'form-control' %>
+        </div>  
+      </div>
+       
+      <div class="row">
+      <div class="col-sm-8"></div>
+        <div class="col-sm-4">
+          <nav class="d-flex justify-content-end mt-0 mb-3">    
+            <%= f.submit 'Send message', class: 'btn btn-outline-primary btn-sm me-2' %>
+            <%= link_to 'Cancel', new_contacts_path, class: 'btn btn-outline-light btn-sm me-2' %> 
+            <%= link_to 'Back', articles_path, class: 'btn btn-outline-secondary btn-sm' %>           
+          </nav>
+        </div>
+    </div>
       <% end %>
+
+    
+    
+    
+
