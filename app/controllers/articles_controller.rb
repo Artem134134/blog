@@ -1,14 +1,14 @@
 
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy, :show]
-
+  before_action :authenticate_user!, only: %i[:new, :create, :edit, :update, :destroy, :show]
+  before_action :set_question, only: %i[show destroy edit update]
+  
   def index
     @articles = Article.all
     @article  = Article.new
   end 
 
   def show
-    @article = Article.find_by id: params[:id]
 
   end 
 
@@ -27,11 +27,10 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find_by id: params[:id]
+    
   end
 
   def update
-    @article = Article.find_by id: params[:id]
 
     if @article.update(article_params)
       flash[:success] = "Successfully updated article!"
@@ -42,17 +41,20 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find_by id: params[:id]  
+      
     @article.destroy  
     flash[:success] = "Successfully deleted article!"
 
     redirect_to articles_path    
   end
 
-
   private 
 
   def article_params
     params.require(:article).permit(:title, :text)
+  end
+
+  def set_question
+    @article = Article.find params[:id] 
   end
 end
