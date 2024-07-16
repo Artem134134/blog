@@ -29,10 +29,8 @@
       <% end %>
      
 
-      <main class="container mt-3">
-      <% flash.each do |k, v| %>     
-        <%= tag.div v, class: "alert alert-#{k}", role: 'alert' %>   
-      <% end %> 
+    <main class="container mt-3">
+      <%= render 'shared/flash' %>
 
     <%= yield %>
     </main>      
