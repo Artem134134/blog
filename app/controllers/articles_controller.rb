@@ -4,12 +4,12 @@ class ArticlesController < ApplicationController
   before_action :set_question, only: %i[show destroy edit update]
   
   def index
-    @articles = Article.all
+    @articles = Article.order created_at: :desc
     @article  = Article.new
   end 
 
   def show
-
+    @comment = @article.comments.build
   end 
 
   def new 
