@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
   
 
 
-  def formatted_created_on
+  def formatted_created_at
     created_at.strftime('pub. date %d.%m.%Y  %H:%M')
   end
 end
