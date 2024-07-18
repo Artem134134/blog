@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
 
   def show
     @comment = @article.comments.build
+    @comments = @article.comments.order created_at: :desc 
   end 
 
   def new 
