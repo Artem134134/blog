@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, :only => [:create]
+  before_action :authenticate_user!, only: %i[:create]
+  before_action :set_question
 
   def create 
-    @article = Article.find(params[:article_id])
+  
     @article.comments.create(comment_params)
     flash[:success] = "Successfully added comment!"
       redirect_to @article
@@ -14,4 +15,7 @@ class CommentsController < ApplicationController
     params.require(:comment).permit( :author, :body)
   end
 
+  def set_question
+    @article = Article.find(params[:article_id])
+	end
 end 
