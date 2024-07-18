@@ -8,26 +8,26 @@
     
       <h4 class="mb-3 mt-0">All <span class="badge rounded-pill text-bg-secondary">comments</span></h4>
       
-      <% @article.comments.each do |comment| %>
+      <% @comments.each do |comment| %>
       <div class="mb-0 mt-0">
         <p><i>Author  <strong><%= comment.author %></strong></i></p>
         <p><i><%= comment.body %></i></p>
 
-        <time datetime="<%= comment.formatted_created_on %>"><small>
-		    <%= comment.formatted_created_on %></small></time> 
+        <time datetime="<%= comment.formatted_created_at %>"><small>
+		    <%= comment.formatted_created_at %></small></time> 
       </div>
       <hr> 
       <% end %>
           
-      <h4>Comment <span class="badge rounded-pill text-bg-secondary">add</span></h4>
+      <h4 class="mb-0 mt-4">Comment <span class="badge rounded-pill text-bg-secondary">add</span></h4>
       
-      <%= form_with(model: [@article, @article.comments.build], local: true) do |f| %>
+      <%= form_with model: [@article, @comment], data: {turbo: false} do |f| %>
         <%= render 'shared/errors', object: @article.comments.build %> <!-- bug - не выводит ошибки на экран -->
         <div class="mt-3 mb-3 row">    
           <%= f.label :author, class: 'fst-italic col-sm-2 col-form-label' %>
 
           <div class="col-sm-10">
-            <%= f.text_field :author, required: true, minlength: 2, maxlength: 50, class: 'form-control'%>
+            <%= f.text_field :author, class: 'form-control'%>
           </div>
         </div>
 
@@ -35,7 +35,7 @@
           <%= f.label :body, class: 'fst-italic col-sm-2 col-form-label'%>
 
           <div class="col-sm-10">
-          <%= f.text_area :body, required: true, minlength: 2, maxlength: 200, class: 'form-control' %>
+          <%= f.text_area :body, class: 'form-control' %>
           </div>
         </div>
       
