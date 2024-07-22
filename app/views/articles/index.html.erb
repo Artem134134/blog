@@ -4,31 +4,30 @@
   <%= link_to 'About', about_path(@about), class: 'link-secondary' %>
   <%= link_to 'Terms', terms_path(@terms), class: 'link-secondary' %>    
 </nav>
-<br>
 
-  <h3 class="mb-4">List of <span class="badge rounded-pill text-bg-secondary">articles</span></h3>
+<div class="mb-0 mt-3">
+  <h4 >Article <span class="badge rounded-pill text-bg-secondary">New</span></h4>
+  <p><%= render 'form_article', article: @article %></p>
+</div>
+
+<h3 class="mb-3 mt-3">List of <span class="badge rounded-pill text-bg-secondary">articles</span></h3>
      
-    <% @articles.each do |article| %>
-    <article class="card mt-3">  
-      <div class="card-body"> 
-        <section class="card-text text-center">        
-          <p><strong><%= article.title %></strong></p>
-          <p><%= article.text %></p>
-          <time datetime="<%= article.formatted_created_at %>"><small>
-		        <%= article.formatted_created_at %></small></time>
-        </section>
+<% @articles.each do |article| %>
+<article class="card mt-3 mb-3">  
+  <div class="card-body"> 
+    <section class="card-text text-center">        
+      <p><strong><%= article.title %></strong></p>
+      <p><%= article.text %></p>
+      <time datetime="<%= article.formatted_created_at %>"><small>
+        <%= article.formatted_created_at %></small></time>
+    </section>
 
-        <nav class="mb-0 mt-3 d-flex justify-content-center">
-          <%= link_to 'Show', article_path(article), class: 'btn btn-outline-info btn-sm me-1' %>  
-          <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-outline-warning btn-sm me-1' %>  
-          <%= link_to 'Delete', article_path(article), class: 'btn btn-outline-danger btn-sm',
-          data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %> 
-        </nav>         
-    </div> 
-    </article>    
-    <% end %>
-    
-    <div class="mb-0 mt-4">
-      <h4 >Article <span class="badge rounded-pill text-bg-secondary">New</span></h4>
-      <p><%= render 'form_article', article: @article %></p>
-    </div>
+    <nav class="mb-0 mt-3 d-flex justify-content-center">
+      <%= link_to 'Show', article_path(article), class: 'btn btn-outline-info btn-sm me-1' %>  
+      <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-outline-warning btn-sm me-1' %>  
+      <%= link_to 'Delete', article_path(article), class: 'btn btn-outline-danger btn-sm',
+      data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %> 
+    </nav>         
+</div> 
+</article>    
+<% end %>
