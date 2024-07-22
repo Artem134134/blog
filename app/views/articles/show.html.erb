@@ -1,6 +1,7 @@
 <article class="mb-4 card"> 
   <div class="card-body">
     <section class="card-text text-center">
+
       <h3><%= @article.title %></h3> 
 
       <p><strong><%= @article.text %></strong></p> 
@@ -41,14 +42,14 @@
             </div>
         </div>
     </div>
-      <% end %>
+<% end %>
       
     
 <h4 class="mb-3 mt-0">All <span class="badge rounded-pill text-bg-secondary">comments</span></h4>
       
 <% @comments.each do |comment| %>
   <article class=" mb-0 mt-0">  
-    <div class="card-body">
+    <div class="card-body ms-5">
       <section class="card-text">
         <p><i>Author  <strong><%= comment.author %></strong></i></p>
         <p><i><%= comment.body %></i></p>
@@ -57,7 +58,7 @@
 		      <%= comment.formatted_created_at %></time></small> 
       </section>
 
-        <nav class="d-flex justify-content-end mt-0 mb-3">               
+        <nav class="d-flex justify-content-center mt-0 mb-3">               
           <%= link_to 'Delete', article_comment_path(@article, comment),
             class: 'btn btn-outline-danger btn-sm',
             data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %>
