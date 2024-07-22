@@ -1,59 +1,36 @@
-  <h3><%= @article.title %></h3> 
+<article class="mb-4 card"> 
+  <div class="card-body">
+    <section class="card-text text-center">
+      <h3><%= @article.title %></h3> 
 
-  <p><strong><%= @article.text %></strong></p> 
+      <p><strong><%= @article.text %></strong></p> 
 
-  <time datetime="<%= @article.formatted_created_at %>"><small>
-		<%= @article.formatted_created_at %></small></time>
-    <hr>      
+      <time datetime="<%= @article.formatted_created_at %>"><small>
+		    <%= @article.formatted_created_at %></small></time>  
+    </section>
+  </div>  
+</article> 
+
+<h4 class="mt-4">Comment <span class="badge rounded-pill text-bg-secondary">add</span></h4>
+      
+<%= form_with model: [@article, @comment], data: {turbo: false} do |f| %>
+  <%= render 'shared/errors', object: @comment %>
+
+  <div class="mt-3 mb-3 row">    
+    <%= f.label :author, class: 'fst-italic col-sm-2 col-form-label' %>
     
-      <h4 class="mb-3 mt-0">All <span class="badge rounded-pill text-bg-secondary">comments</span></h4>
-      
-      <% @comments.each do |comment| %>
-      <article class="mb-0 mt-0">  
-      <div >
-      
-        <p><i>Author  <strong><%= comment.author %></strong></i></p>
-        <p><i><%= comment.body %></i></p>
-
-        <time datetime="<%= comment.formatted_created_at %>"><small>
-		    <%= comment.formatted_created_at %></small></time> 
-      </div>
-
-      <div class="row">
-      <div class="col-sm-8"></div>
-        <div class="col-sm-4">
-          <div class="d-flex justify-content-end mt-0 mb-3">               
-            <%= link_to 'Delete', article_comment_path(@article, comment),
-              class: 'btn btn-outline-danger btn-sm',
-              data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %>
-            </div>
-        </div>
+    <div class="col-sm-10">
+      <%= f.text_field :author, class: 'form-control'%>
     </div>
-    </article>
-      <hr> 
-      
-      <% end %>
-          
-      <h4 class="mt-5">Comment <span class="badge rounded-pill text-bg-secondary">add</span></h4>
-      
-      <%= form_with model: [@article, @comment], data: {turbo: false} do |f| %>
-        <%= render 'shared/errors', object: @comment %>
+  </div>
 
-        <div class="mt-3 mb-3 row">    
-          <%= f.label :author, class: 'fst-italic col-sm-2 col-form-label' %>
+  <div class="mb-3 row">
+    <%= f.label :body, class: 'fst-italic col-sm-2 col-form-label'%>
 
-          <div class="col-sm-10">
-            <%= f.text_field :author, class: 'form-control'%>
-          </div>
-        </div>
-
-        <div class="mb-3 row">
-          <%= f.label :body, class: 'fst-italic col-sm-2 col-form-label'%>
-
-          <div class="col-sm-10">
-          <%= f.text_area :body, class: 'form-control' %>
-          </div>
-        </div>
+    <div class="col-sm-10">
+      <%= f.text_area :body, class: 'form-control' %>
+    </div>
+  </div>
       
       <div class="row">
       <div class="col-sm-8"></div>
@@ -65,4 +42,29 @@
         </div>
     </div>
       <% end %>
+      
+    
+<h4 class="mb-3 mt-0">All <span class="badge rounded-pill text-bg-secondary">comments</span></h4>
+      
+<% @comments.each do |comment| %>
+  <article class=" mb-0 mt-0">  
+    <div class="card-body">
+      <section class="card-text">
+        <p><i>Author  <strong><%= comment.author %></strong></i></p>
+        <p><i><%= comment.body %></i></p>
+
+        <small><time datetime="<%= comment.formatted_created_at %>">
+		      <%= comment.formatted_created_at %></time></small> 
+      </section>
+
+        <nav class="d-flex justify-content-end mt-0 mb-3">               
+          <%= link_to 'Delete', article_comment_path(@article, comment),
+            class: 'btn btn-outline-danger btn-sm',
+            data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %>
+        </nav>
+      
+    </div>
+  </article>  
+      <% end %>
+          
       
