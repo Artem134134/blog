@@ -20,16 +20,13 @@
         </div>  
       </div>
        
-      <div class="row">
-      <div class="col-sm-8"></div>
-        <div class="col-sm-4">
-          <nav class="d-flex justify-content-end mt-0 mb-3">    
-            <%= f.submit 'Send message', class: 'btn btn-outline-primary btn-sm me-2' %>
-            <%= link_to 'Cancel', new_contacts_path, class: 'btn btn-outline-light btn-sm me-2' %> 
-            <%= link_to 'Back', articles_path, class: 'btn btn-outline-secondary btn-sm' %>           
-          </nav>
-        </div>
-    </div>
+      <div class="row">     
+        <nav class="d-flex justify-content-end mt-0 mb-3">    
+          <%= f.submit 'Send message', class: 'btn btn-outline-primary btn-sm me-1' %>
+          <%= link_to 'Cancel', new_contacts_path, class: 'btn btn-outline-light btn-sm me-1' %> 
+          <%= link_to 'Back', articles_path, class: 'btn btn-outline-secondary btn-sm' %>           
+        </nav>
+      </div>
       <% end %>
 
     
