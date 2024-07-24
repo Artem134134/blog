@@ -29,9 +29,12 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment.update(comment_params)
-    flash[:success] = "Comment has been updated!"
-    redirect_to article_path(@article)
+    if @comment.update(comment_params)
+      flash[:success] = "Comment has been updated!"
+      redirect_to article_path(@article)
+    else 
+      render :edit
+    end
   end
 
   private 
