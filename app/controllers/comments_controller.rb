@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create]
   before_action :set_article
-  before_action :set_set_comment, except: %i[create]
+  before_action :set_comment, except: %i[create]
 
   def new
     @comment = @article.comments.build
@@ -19,15 +19,19 @@ class CommentsController < ApplicationController
     end
   end
 
-  def destroy
-    
+  def destroy   
     @comment.destroy
     flash[:success] = "Comment has been deleted!"
     redirect_to article_path(@article)
   end
 
-  def edit
-    
+  def edit    
+  end
+
+  def update
+    @comment.update(comment_params)
+    flash[:success] = "Comment has been updated!"
+    redirect_to article_path(@article)
   end
 
   private 
