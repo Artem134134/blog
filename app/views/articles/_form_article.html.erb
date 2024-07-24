@@ -1,7 +1,7 @@
-
+<%= render 'shared/errors', object: @article %>
 
 <%= form_with model: @article, data: {turbo: false} do |f| %>
-  <%= render 'shared/errors', object: @article %>
+  
 
   <div class="mb-3 row">
     <%= f.label :title, class: 'fst-italic col-sm-2 col-form-label' %>
@@ -19,13 +19,9 @@
     </div>  
   </div>
 
-  <div class="row">
-    <div class="col-sm-8"></div>
-      <div class="col-sm-4">
-        <div class="d-flex justify-content-end mt-0 mb-3">
-          <%= f.submit 'Save article', class: 'btn btn-outline-primary btn-sm' %>
-      </div>
+  <div class="row">    
+    <div class="d-flex justify-content-end mt-0 mb-3">
+      <%= f.submit 'Save article', class: 'btn btn-outline-primary btn-sm' %>
     </div>
   </div>
-
 <% end %>
