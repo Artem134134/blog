@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resource  :contacts, only: %i[new create], path_names: {new: ''}
   
   resources :articles do 
-    resources :comments, only: %i[new create destroy]
+    resources :comments, except: %i[show]
   end
   
 end
