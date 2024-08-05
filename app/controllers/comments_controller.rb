@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
   def update
     if @comment.update(comment_params)
       flash[:success] = "Comment has been updated!"
-      redirect_to article_path(@article)
+      redirect_to article_path(@article, anchor: "comment-#{@comment.id}")
     else 
       render :edit
     end

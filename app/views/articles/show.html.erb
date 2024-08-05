@@ -21,7 +21,7 @@
 <h4 class="mb-3 mt-0">All <span class="badge rounded-pill text-bg-secondary">comments</span></h4>
       
 <% @comments.each do |comment| %>
-  <article class=" mb-0 mt-0">  
+  <article class=" mb-0 mt-0" id="comment-<%= comment.id %>" >  
     <div class="card-body ms-5">
       <section class="card-text">
         <p><i>Author  <strong><%= comment.author %></strong></i></p>

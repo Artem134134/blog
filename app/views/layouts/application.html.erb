@@ -20,7 +20,7 @@
     <nav class="gap-3 d-flex flex-wrap align-items-start justify-content-start">     
       
     <% if user_signed_in? %>    
-      <p> &copy; <%= current_user.email %>
+      <p><%= current_user.email %>
         <%= link_to "Sign Out", destroy_user_session_path, class: 'btn btn-outline-secondary btn-sm', data: {'turbo-method': :delete} %>  
       <% else %>
         <%= link_to "Sign In", new_user_session_path, class: 'btn btn-outline-secondary btn-sm' %>
