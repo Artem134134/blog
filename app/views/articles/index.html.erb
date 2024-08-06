@@ -17,7 +17,7 @@
 <article class="card mt-3 mb-2" id="article-<%= article.id %>">  
   <div class="card-body"> 
     <section class="card-text text-center">        
-      <p><strong><%= article.title %></strong></p>
+      <p><strong><%= strip_tags article.title %></strong></p>
       <p><%= article.text %></p>
       <time datetime="<%= article.formatted_created_at %>"><small>
         <%= article.formatted_created_at %></small></time>
