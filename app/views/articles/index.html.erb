@@ -14,7 +14,7 @@
 <h3 class="mb-3 mt-3">List of <span class="badge rounded-pill text-bg-secondary">articles</span></h3>
      
 <% @articles.each do |article| %>
-<article class="card mt-3 mb-2">  
+<article class="card mt-3 mb-2" id="article-<%= article.id %>">  
   <div class="card-body"> 
     <section class="card-text text-center">        
       <p><strong><%= article.title %></strong></p>
@@ -25,7 +25,7 @@
 
     <nav class="mb-0 mt-2 d-flex justify-content-center">
       <%= link_to 'Show', article_path(article), data: {turbo: false}, class: 'btn btn-outline-info btn-sm me-1' %>  
-      <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-outline-warning btn-sm me-1' %>  
+      <%= link_to 'Edit', edit_article_path(article), data: {turbo: false}, class: 'btn btn-outline-warning btn-sm me-1' %>  
       <%= link_to 'Delete', article_path(article), class: 'btn btn-outline-danger btn-sm',
       data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %> 
     </nav>         
