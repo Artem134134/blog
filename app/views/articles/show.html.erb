@@ -11,6 +11,13 @@
       <time datetime="<%= @article.formatted_created_at %>"><small>
 		    <%= @article.formatted_created_at %></small></time>  
     </section>
+
+     <nav class="mb-0 mt-2 d-flex justify-content-center">
+      <%= link_to 'All articles', articles_path, class: 'btn btn-outline-info btn-sm me-1' %> 
+      <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-outline-warning btn-sm me-1' %>  
+      <%= link_to 'Delete', article_path(@article), class: 'btn btn-outline-danger btn-sm',
+      data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %> 
+    </nav>  
   </div>  
 </article> 
 
