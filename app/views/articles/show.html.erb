@@ -4,9 +4,11 @@
   <div class="card-body">
     <section class="card-text text-center">
 
-      <h3><%= @article.title %></h3> 
-
-      <p><strong><%= @article.text %></strong></p> 
+    <div>
+      <h4><%= @article.title %></h4> 
+   
+      <p><strong><%= sanitize @article.text %></strong></p>
+    </div>
 
       <time datetime="<%= @article.formatted_created_at %>"><small>
 		    <%= @article.formatted_created_at %></small></time>  
