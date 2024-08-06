@@ -18,7 +18,7 @@
   <div class="card-body"> 
     <section class="card-text text-center">        
       <p><strong><%= strip_tags article.title %></strong></p>
-      <p><%= article.text %></p>
+      <p><%= sanitize article.text %></p>
       <time datetime="<%= article.formatted_created_at %>"><small>
         <%= article.formatted_created_at %></small></time>
     </section>
