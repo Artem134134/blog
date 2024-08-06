@@ -5,7 +5,7 @@
     <section class="card-text text-center">
 
     <div>
-      <h4><%= @article.title %></h4> 
+      <h4><%= strip_tags @article.title %></h4> 
    
       <p><strong><%= sanitize @article.text %></strong></p>
     </div>
