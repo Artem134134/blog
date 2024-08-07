@@ -1,0 +1,17 @@
+<article class="card mt-3 mb-2" id="article-<%= article.id %>">  
+  <div class="card-body"> 
+    <section class="card-text text-center">        
+      <p><strong><%= strip_tags article.title %></strong></p>
+      <p><%= sanitize article.text %></p>
+      <time datetime="<%= article.formatted_created_at %>"><small>
+        <%= article.formatted_created_at %></small></time>
+    </section>
+
+    <nav class="mb-0 mt-2 d-flex justify-content-center">
+      <%= link_to 'Show', article_path(article), data: {turbo: false}, class: 'btn btn-outline-info btn-sm me-1' %>  
+      <%= link_to 'Edit', edit_article_path(article), data: {turbo: false}, class: 'btn btn-outline-warning btn-sm me-1' %>  
+      <%= link_to 'Delete', article_path(article), class: 'btn btn-outline-danger btn-sm',
+      data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %> 
+    </nav>         
+</div> 
+</article>
