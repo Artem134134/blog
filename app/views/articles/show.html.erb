@@ -28,11 +28,8 @@
   <%= render 'comments/form' %>
     
 <h4 class="mb-3 mt-0">All <span class="badge rounded-pill text-bg-secondary">comments</span></h4>
-      
-<% @comments.each do |comment| %>
-  
-<% end %>
 
-<%= render @comments %>
+<%= render partial: 'comments/comment', collection: @comments,
+  as: :comment, locals: {article: @article} %>
           
       
