@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  include ActionView::RecordIdentifier
+  
   before_action :authenticate_user!, only: %i[create]
   before_action :set_article
   before_action :set_comment, except: %i[create]

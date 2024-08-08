@@ -1,5 +1,6 @@
-
 class ArticlesController < ApplicationController
+  include ActionView::RecordIdentifier
+  
   before_action :authenticate_user!, only: %i[new create edit update destroy show]
   before_action :set_article, only: %i[show destroy edit update]
   
