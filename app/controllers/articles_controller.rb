@@ -5,13 +5,13 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show destroy edit update]
   
   def index
-    @articles = Article.order created_at: :desc
     @article  = Article.new
+    @pagy, @articles = pagy Article.order(created_at: :desc)
   end 
 
   def show
     @comment = @article.comments.build
-    @comments = @article.comments.order created_at: :desc 
+    @pagy, @comments = pagy @article.comments.order created_at: :desc
   end 
 
   def new 

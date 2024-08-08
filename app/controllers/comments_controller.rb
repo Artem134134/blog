@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     flash[:success] = "Successfully added comment!"
       redirect_to article_path(@article)
     else
-      @comments = @article.comments.order created_at: :desc 
+      @pagy, @comments = @article.comments.order created_at: :desc 
       render 'articles/show'
     end
   end
