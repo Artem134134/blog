@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   include ActionView::RecordIdentifier
-  
+
   before_action :authenticate_user!, only: %i[new create edit update destroy show]
   before_action :set_article, only: %i[show destroy edit update]
   
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
 
     if @article.update(article_params)
       flash[:success] = "Successfully updated article!"
-      redirect_to articles_path(@article, anchor: "article-#{@article.id}")
+      redirect_to articles_path(@article, anchor: dom_id(@article))                                              
     else
       render :edit
     end

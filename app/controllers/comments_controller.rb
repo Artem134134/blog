@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   include ActionView::RecordIdentifier
-  
+
   before_action :authenticate_user!, only: %i[create]
   before_action :set_article
   before_action :set_comment, except: %i[create]
@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
   def update
     if @comment.update(comment_params)
       flash[:success] = "Comment has been updated!"
-      redirect_to article_path(@article, anchor: "comment-#{@comment.id}")
+      redirect_to article_path(@article, anchor: dom_id(@comment))
     else 
       render :edit
     end
