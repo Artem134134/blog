@@ -4,7 +4,7 @@
     <section class="card-text text-center"> 
       <div>      
         <p><strong><%= strip_tags article.title %></strong></p>
-        <p><%= sanitize article.text %></p>
+        <p><%= raw sanitize article.truncated_text %></p>
       </div> 
       <time datetime="<%= formatted_created_at(article) %>"><small>
         <%= formatted_created_at(article) %></small></time>
