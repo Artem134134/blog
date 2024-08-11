@@ -5,8 +5,8 @@
         <p><i>Author  <strong><%= comment.author %></strong></i></p>
         <p><i><%= comment.body %></i></p>
       </div>
-      <small><time datetime="<%= comment.formatted_created_at %>">
-        <%= comment.formatted_created_at %></time></small> 
+      <small><time datetime="<%= formatted_created_at(comment) %>">
+        <%= formatted_created_at(comment) %></time></small> 
       </section>
 
       <nav class="d-flex justify-content-start mt-1 mb-3">

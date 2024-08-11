@@ -10,8 +10,8 @@
       <p><strong><%= sanitize @article.text %></strong></p>
     </div>
 
-      <time datetime="<%= @article.formatted_created_at %>"><small>
-		    <%= @article.formatted_created_at %></small></time>  
+      <time datetime="<%= formatted_created_at(@article) %>"><small>
+		    <%= formatted_created_at(@article) %></small></time>  
     </section>
 
      <nav class="mb-0 mt-2 d-flex justify-content-center">
