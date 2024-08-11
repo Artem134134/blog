@@ -29,9 +29,9 @@
     
 <h4 class="mb-3 mt-0">All <span class="badge rounded-pill text-bg-secondary">comments</span></h4>
 
-<%== pagy_bootstrap_nav @pagy %>
+<%= pagination @pagy %>
 
 <%= render partial: 'comments/comment', collection: @comments,
   as: :comment, locals: {article: @article} %>
           
-<%== pagy_bootstrap_nav @pagy %>      
+<%= pagination @pagy %>      
