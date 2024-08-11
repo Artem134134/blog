@@ -12,10 +12,5 @@ class Article < ApplicationRecord
   def last_comment
     comments.last
   end
-
-  def formatted_created_at
-		created_at.strftime('pub. date %d.%m.%Y  %H:%M')
-	end
-
+  
 end
- 

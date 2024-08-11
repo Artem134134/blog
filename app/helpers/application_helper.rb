@@ -1,6 +1,10 @@
 module ApplicationHelper
 	include Pagy::Frontend
 
+	def formatted_created_at(obj)
+    obj.created_at.strftime('pub. date %d.%m.%Y  %H:%M')
+  end
+
 	def pagination(obj)
 		raw(pagy_bootstrap_nav(obj)) if obj.pages > 1
 	end
