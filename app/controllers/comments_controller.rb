@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
       redirect_to article_path(@article)
     else
       @pagy, @comments = pagy @article.comments.order created_at: :desc 
+      flash.now[:warning] = "Failed to create comment. Please check the errors."
       render 'articles/show'
     end
   end
@@ -35,6 +36,7 @@ class CommentsController < ApplicationController
       flash[:success] = "Comment has been updated!"
       redirect_to article_path(@article, anchor: dom_id(@comment))
     else 
+       flash.now[:warning] = "Failed to update comment. Please check the errors."
       render :edit
     end
   end
