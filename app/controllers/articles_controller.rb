@@ -24,6 +24,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Successfully created article!"
        redirect_to articles_path
     else
+      flash.now[:warning] = "Failed to create article. Please check the errors."
       render :new
     end
   end
@@ -38,6 +39,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Successfully updated article!"
       redirect_to articles_path(@article, anchor: dom_id(@article))                                              
     else
+      flash.now[:warning] = "Failed to update article. Please check the errors."
       render :edit
     end
   end
