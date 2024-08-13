@@ -13,9 +13,9 @@
 
 <h3 class="mb-3 mt-3">List of <span class="badge rounded-pill text-bg-secondary">articles</span></h3>
 
-<%= pagination @pagy %>
+<%== pagination @pagy %>
 
 <%= render partial: 'articles/article', collection: @articles,
   as: :article, locals: {article: @article} %>
 
-<%= pagination @pagy %>
+<%== pagination @pagy %>
