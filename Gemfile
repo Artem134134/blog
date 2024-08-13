@@ -56,9 +56,11 @@ group :test, :development do
   gem "debug", platforms: %i[ mri mingw x64_mingw ] 
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'capybara'
-  gem 'factory_bot_rails'
-  
+  gem 'capybara', require: false
+  gem 'factory_bot_rails', require: false
+  gem 'rubocop', '~> 1.65', require: false
+  gem 'rubocop-rails', '~> 2.25', require: false
+  gem 'rubocop-performance', '~> 1.21', require: false
 
 end
 
