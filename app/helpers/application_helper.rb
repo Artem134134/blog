@@ -18,7 +18,7 @@ module ApplicationHelper
       "#{page_title} | #{base_title}"
     else
       base_title
-    end    
+    end
   end
 
   def split_user_email(obj)

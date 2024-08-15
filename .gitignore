@@ -1,8 +1,9 @@
 tmp/
 tmp/pids/server.pid
-tmp/cache/bootsnap/compile-cache-iseq/
 tmp/cache/assets/sprockets/
 tmp/cache/bootsnap/compile-cache-yaml/e8/71d35ba926593d
+tmp/cache/bootsnap/compile-cache-iseq/
+tmp/cache/bootsnap/load-path-cache
 test.sqlite3
 db/development.sqlite3
 db/development.sqlite3-shm
