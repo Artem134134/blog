@@ -2,8 +2,8 @@
 
 # Pin npm packages by running ./bin/importmap
 pin 'application', preload: true
-pin "bootstrap", to: "bootstrap/dist/js/bootstrap.bundle.min.js"
-pin "@popperjs/core", to: "/@popperjs/core/dist/umd/popper.min.js"
+pin '@popperjs/core', to: "@popperjs/core/dist/umd/popper.min.js"
+pin 'bootstrap', to: "bootstrap/dist/js/bootstrap.bundle.min.js"
 
 
 pin '@hotwired/turbo-rails', to: 'turbo.min.js'
