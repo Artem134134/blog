@@ -4,7 +4,8 @@ module ApplicationHelper
   include Pagy::Frontend
 
   def formatted_created_at(obj)
-    obj.created_at.strftime('pub. date %d.%m.%Y  %H:%M')
+    #obj.created_at.strftime('pub. date %d.%m.%Y  %H:%M')
+    l obj.created_at, format: :long
   end
 
   def pagination(obj)
