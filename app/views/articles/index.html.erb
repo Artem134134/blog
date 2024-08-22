@@ -1,17 +1,17 @@
-<% provide :page_title, 'Main page' %>
+<% provide :page_title, t('.main_page') %>
   
 <nav class=" gap-3 d-flex flex-wrap align-items-center justify-content-center ">   
-  <%= link_to 'Contact Us', new_contacts_path(@contact), class: 'link-secondary' %>
-  <%= link_to 'About', about_path(@about), class: 'link-secondary' %>
-  <%= link_to 'Terms', terms_path(@terms), class: 'link-secondary' %>    
+  <%= link_to t('.contact_us'), new_contacts_path(@contact), class: 'link-secondary' %>
+  <%= link_to t('.about'), about_path(@about), class: 'link-secondary' %>
+  <%= link_to t('.terms'), terms_path(@terms), class: 'link-secondary' %>    
 </nav>
 
 <div class="mb-0 mt-3">
-  <h4 >Article <span class="badge rounded-pill text-bg-secondary">New</span></h4>
+  <h4><%= t('.header1') %><span class="badge rounded-pill text-bg-secondary"><%= t('.badge1') %></span></h4>
   <p><%= render 'form_article', article: @article %></p>
 </div>
 
-<h3 class="mb-3 mt-3">List of <span class="badge rounded-pill text-bg-secondary">articles</span></h3>
+<h3 class="mb-3 mt-3"><%= t('.header2') %><span class="badge rounded-pill text-bg-secondary"><%= t('.badge2') %></span></h3>
 
 <%== pagination @pagy %>
 
