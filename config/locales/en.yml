@@ -23,6 +23,10 @@ en:
       comment: "Comment"
       contact: "Contact"
       user: "User"
+  layouts:
+    application:
+      sign_in: "Sign In"
+      sign_out: "Sign Out"
   articles:
     index:
       main_page: "Main page"

@@ -23,6 +23,10 @@ ru:
       comment: "Комментарий"
       contact: "Контакт"
       user: "Пользователь"
+  layouts:
+    application:
+      sign_in: "Войти"
+      sign_out: "Выйти"
   articles:
     index:
       main_page: "Главная страница"
