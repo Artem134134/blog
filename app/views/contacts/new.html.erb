@@ -1,6 +1,6 @@
-<% provide :page_title, 'Contact Us' %>
+<% provide :page_title, t('.tab_name') %>
 
-  <h3><span class="badge rounded-pill text-bg-secondary mb-3"><%= t('contacts.contact_us') %></span></h3>
+  <h3><span class="badge rounded-pill text-bg-secondary mb-3"><%= t('.tab_name') %></span></h3>
 
     <%= form_with model: @contact, data: {turbo: false} do |f|%>
       <%= render 'shared/errors', object: @contact %>
@@ -23,9 +23,9 @@
        
       <div class="row">     
         <nav class="d-flex justify-content-end mt-0 mb-3">    
-          <%= f.submit 'Send message', class: 'btn btn-outline-primary btn-sm me-1' %>
-          <%= link_to 'Cancel', new_contacts_path, class: 'btn btn-outline-light btn-sm me-1' %> 
-          <%= link_to 'Back', articles_path, class: 'btn btn-outline-secondary btn-sm' %>           
+          <%= f.submit t('global.button.submit'), class: 'btn btn-outline-primary btn-sm me-1' %>
+          <%= link_to t('.button.cancel'), new_contacts_path, class: 'btn btn-outline-light btn-sm me-1' %> 
+          <%= link_to t('.button.back'), articles_path, class: 'btn btn-outline-secondary btn-sm' %>           
         </nav>
       </div>
       <% end %>

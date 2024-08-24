@@ -11,10 +11,10 @@
     </section>
 
     <nav class="mb-0 mt-2 d-flex justify-content-center">
-      <%= link_to 'Show', article_path(article), data: {turbo: false}, class: 'btn btn-outline-info btn-sm me-1' %>  
-      <%= link_to 'Edit', edit_article_path(article), data: {turbo: false}, class: 'btn btn-outline-warning btn-sm me-1' %>  
-      <%= link_to 'Delete', article_path(article), class: 'btn btn-outline-danger btn-sm',
-      data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %> 
+      <%= link_to t('global.button.show'), article_path(article), data: {turbo: false}, class: 'btn btn-outline-info btn-sm me-1' %>  
+      <%= link_to t('global.button.edit'), edit_article_path(article), data: {turbo: false}, class: 'btn btn-outline-warning btn-sm me-1' %>  
+      <%= link_to t('global.button.delete'), article_path(article), class: 'btn btn-outline-danger btn-sm',
+      data: { turbo_confirm: t('global.dialog.you_sure'), turbo_method: :delete } %> 
     </nav>         
 </div> 
 <% end %>

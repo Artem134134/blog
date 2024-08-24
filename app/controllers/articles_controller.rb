@@ -25,27 +25,27 @@ class ArticlesController < ApplicationController
   def create
     @article  = Article.new(article_params)
     if @article.save
-      flash[:success] = 'Successfully created article!'
+      flash[:success] = t '.success'
       redirect_to articles_path
     else
-      flash.now[:warning] = 'Failed to create article. Please check the errors.'
+      flash.now[:warning] = t '.warning'
       render :new
     end
   end
 
   def update
     if @article.update(article_params)
-      flash[:success] = 'Successfully updated article!'
+      flash[:success] = t '.success'
       redirect_to articles_path(@article, anchor: dom_id(@article))
     else
-      flash.now[:warning] = 'Failed to update article. Please check the errors.'
+      flash.now[:warning] = t '.warning'
       render :edit
     end
   end
 
   def destroy
     @article.destroy
-    flash[:success] = 'Successfully deleted article!'
+    flash[:success] = t '.success'
 
     redirect_to articles_path
   end

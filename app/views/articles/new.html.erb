@@ -1,5 +1,5 @@
-<% provide :page_title, 'New article' %>
+<% provide :page_title, t('.tab_name') %>
 
-<h4 class="mb-3 mt-0">Article <span class="badge rounded-pill text-bg-secondary">New</span></h4>
+<h4 class="mb-3 mt-0"><%= t('.header') %><span class="badge rounded-pill text-bg-secondary"><%= t('.badge') %></span></h4>
 
   <%= render 'form_article' %>

@@ -2,7 +2,7 @@
   <div class="card-body ms-5">
     <section class="card-text">
       <div>
-        <p><i>Author  <strong><%= comment.author %></strong></i></p>
+        <p><i><%= t('.label') %><strong><%= comment.author %></strong></i></p>
         <p><i><%= comment.body %></i></p>
       </div>
       <small><time datetime="<%= formatted_created_at(comment) %>">
@@ -10,11 +10,11 @@
       </section>
 
       <nav class="d-flex justify-content-start mt-1 mb-3">
-        <%= link_to 'Edit', edit_article_comment_path(article, comment),
+        <%= link_to t('global.button.edit'), edit_article_comment_path(article, comment),
           data: {turbo: false}, class: 'btn btn-outline-warning btn-sm me-1' %>               
-        <%= link_to 'Delete', article_comment_path(article, comment),
+        <%= link_to t('global.button.delete'), article_comment_path(article, comment),
           class: 'btn btn-outline-danger btn-sm ',
-          data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %>    
+          data: { turbo_confirm: t('global.dialog.you_sure'), turbo_method: :delete } %>    
       </nav> 
     </div>
   <% end %> 

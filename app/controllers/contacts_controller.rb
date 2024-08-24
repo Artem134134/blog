@@ -9,10 +9,10 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.valid?
       @contact.save
-      flash[:success] = 'Your form has been submitted!'
+      flash[:success] = t '.success'
       redirect_to root_path
     else
-      flash.now[:warning] = 'Failed to create contact. Please check the errors.'
+      flash.now[:warning] = t '.warning'
       render :new
     end
   end

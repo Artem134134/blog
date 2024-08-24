@@ -17,28 +17,28 @@ class CommentsController < ApplicationController
     @comment = @article.comments.build(comment_params)
 
     if @comment.save
-      flash[:success] = 'Successfully added comment!'
+      flash[:success] = '.success'
       redirect_to article_path(@article)
     else
       @pagy, @comments = pagy @article.comments.order created_at: :desc
-      flash.now[:warning] = 'Failed to create comment. Please check the errors.'
+      flash.now[:warning] = t '.warning'
       render 'articles/show'
     end
   end
 
   def update
     if @comment.update(comment_params)
-      flash[:success] = 'Comment has been updated!'
+      flash[:success] = '.success'
       redirect_to article_path(@article, anchor: dom_id(@comment))
     else
-      flash.now[:warning] = 'Failed to update comment. Please check the errors.'
+      flash.now[:warning] = t '.warning'
       render :edit
     end
   end
 
   def destroy
     @comment.destroy
-    flash[:success] = 'Comment has been deleted!'
+    flash[:success] = '.success'
     redirect_to article_path(@article)
   end
 
