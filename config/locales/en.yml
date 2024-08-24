@@ -1,36 +1,96 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
-
+  activerecord:
+    attributes:
+      article: 
+        title: "Title"
+        text: "Text"
+      comment:
+        author: "Author"
+        body: "Body"
+      contact:
+        email: "Email"
+        message: "Message"
+      user:
+        email: "Email"
+        password: "Password"
+        password_verification: "Password verification"
+        current_password: "Current password"
+        username: "User name"
+    models:  
+      article: "Article"
+      comment: "Comment"
+      contact: "Contact"
+      user: "User"
+  articles:
+    index:
+      main_page: "Main page"
+      contact_us: "Contact Us"
+      about: "About"
+      terms: "Terms"
+      header1: "Article "
+      badge1: "New"
+      header2: "List of "
+      badge2: "articles"
+    show:
+      tab_name: "Show article"
+      header1: "Comment "
+      badge1: "add"
+      header2: "All "
+      badge2: "comments"
+      button:
+        all_articles: "All articles"
+    form_article:
+      button:
+        submit: "Save article"
+    edit:
+      tab_name: "Edit article"
+      header: "Edit "
+      badge: "article"
+    new:
+      tab_name: "New article"
+      header: "Article "
+      badge: "New"      
+    create:
+      success: "The article has been successfully created."
+      warning: "Failed to create article. Please check the errors!"
+    update: 
+      success: "Successfully updated article."
+      warning: "Failed to update article. Please check the errors!"
+    destroy:
+      success: "Successfully deleted article!" 
+  comments:
+    comment:
+      label: "Author "
+    form:
+      button: "Save comment"
+    edit:
+      tab_name: "Edit comment"
+      header: "Edit "
+      badge: "comment"
+    create:
+      success: "Successfully added comment."
+      warning: "Failed to create comment. Please check the errors."
+    update: 
+      success: "Successfully updated comment."
+      warning: "Failed to update comment. Please check the errors!"
+    destroy:
+      success: "Successfully deleted comment!" 
   contacts:
-    contact_us: "Contact Us!"
+    new:
+      tab_name: "Contact Us"
+      button:
+        cancel: "Cancel"
+        back: "Back"
+    create: 
+      success: "Your form has been submitted."
+      warning: "Failed to create contact. Please check the errors!"       
+  en: English
+  global:
+    button:
+      delete: Delete
+      edit: Edit
+      show: Show
+      submit: Submit
+    dialog:
+      you_sure: Are you sure?
+   

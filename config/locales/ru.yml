@@ -1,0 +1,95 @@
+ru:
+  activerecord:
+    attributes:
+      article: 
+        title: "Заголовок"
+        text: "Текст"
+      comment:
+        author: "Автор"
+        body: "Текст"
+      contact:
+        email: "Эл. почта"
+        message: "Сообщение"
+      user:
+        email: "Эл. почта"
+        password: "Пароль"
+        password_verification: "Проверка пароля"
+        current_password: "Текущий пароль"
+        username: "Имя пользователя"
+    models:  
+      article: "Статья"
+      comment: "Комментарий"
+      contact: "Контакт"
+      user: "Пользователь"
+  articles:
+    index:
+      main_page: "Главная страница"
+      contact_us: "Связаться с нами"
+      about: "О нас"
+      terms: "Пожелания"
+      header1: "Новая "
+      badge1: "статья"
+      header2: "Список "
+      badge2: "статей"
+    show:
+      tab_name: "Показать статью"
+      header1: "Добавить "
+      badge1: "комментарий"
+      header2: "Все "
+      badge2: "комментарии"
+      button:
+        all_articles: "Все статьи"
+    form_article:
+      button:
+        submit: "Сохранить статью"
+    edit:
+      tab_name: "Редактировать статью"
+      header: "Изменить "
+      badge: "статью"
+    new:
+      tab_name: "Новая статья"
+      header: "Новая "
+      badge: "статья"
+    create:
+      success: "Статья успешно создана!"
+      warning: "Не удалось создать статью. Проверьте ошибки!"
+    update:
+      success: "Статья успешно обновлена."
+      warning: "Не удалось обновить статью. Проверьте ошибки!"
+    destroy:
+      success: "Статья успешно удалена!"       
+  comments:
+    comment:
+      label: "Автор "
+    form:
+      button: "Сохранить комментарий"
+    edit:
+      tab_name: "Редактировать комментарий"
+      header: "Изменить "
+      badge: "комментарий"
+    create:
+      success: "Комментарий успешно создан."
+      warning: "Не удалось создать комментарий. Проверьте ошибки!"
+    update:
+      success: "Комментарий успешно обновлен."
+      warning: "Не удалось обновить комментарий. Проверьте ошибки!"
+    destroy:
+      success: "Комментарий успешно удалён!"
+  contacts:
+    new:
+      tab_name: "Связаться с нами!"
+      button:
+        cancel: "Отмена"
+        back: "Назад"
+    create: 
+      success: "Ваша форма отправлена."
+      warning: "Не удалось создать контакт. Проверьте ошибки!"     
+  en: Английский
+  global:
+    button:
+      delete: Удалить
+      edit: Изменить
+      show: Показать
+      submit: Отправить
+    dialog:
+      you_sure: Вы уверены?  
