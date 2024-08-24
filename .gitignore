@@ -9,3 +9,6 @@ db/development.sqlite3
 db/development.sqlite3-shm
 db/development.sqlite3-wal
 log/development.log
+db/production.sqlite3
+db/production.sqlite3-shm
+log/production.log
