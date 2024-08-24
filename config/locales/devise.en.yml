@@ -1,5 +1,5 @@
 # Additional translations at https://github.com/heartcombo/devise/wiki/I18n
-en:
+en: 
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
@@ -55,14 +55,13 @@ en:
         unlock: "Unlock my account"
         text1: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
         text2: "Click the link below to unlock your account:"
-
-    registrations:
       edit:
         header: "Cancel my account"
         unhappy: "Unhappy? "
         waiting: "Currently waiting confirmation for: %{email}"
         hint1: "leave blank if you don't want to change it"
         hint2: "we need your current password to confirm your changes"
+
     unlocks:
       new: 
         header: "Resend unlock instructions"

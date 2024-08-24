@@ -11,9 +11,11 @@ ru:
         email: "Эл. почта"
         message: "Сообщение"
       user:
+        remember_me: "Запомнить меня"
         email: "Эл. почта"
         password: "Пароль"
         password_verification: "Проверка пароля"
+        password_confirmation: "Подтверждение пароля"
         current_password: "Текущий пароль"
         username: "Имя пользователя"
     models:  
