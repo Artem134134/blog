@@ -1,5 +1,4 @@
 # Additional translations at https://github.com/heartcombo/devise/wiki/I18n
-
 en:
   devise:
     confirmations:
@@ -36,7 +35,50 @@ en:
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
+    confirmations:
+      new:
+        header: "Resend confirmation instructions"
+    mailer:
+      confirmation_instructions:
+        welcome: "Welcome %{email}"
+        confirm_text: "You can confirm your account email through the link below:"
+        confirm: "Confirm my account"
+      email_changed:
+        email_changed: "We're contacting you to notify you that your email has been changed to %{email}."
+      password_change: 
+        text: "We're contacting you to notify you that your password has been changed."
+      reset_password_instructions:
+        text1: "Someone has requested a link to change your password. You can do this through the link below."
+        text2: "If you didn't request this, please ignore this email."
+        text3: "Your password won't change until you access the link above and create a new one."
+      unlock_instructions:
+        unlock: "Unlock my account"
+        text1: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        text2: "Click the link below to unlock your account:"
+
     registrations:
+      edit:
+        header: "Cancel my account"
+        unhappy: "Unhappy? "
+        waiting: "Currently waiting confirmation for: %{email}"
+        hint1: "leave blank if you don't want to change it"
+        hint2: "we need your current password to confirm your changes"
+    unlocks:
+      new: 
+        header: "Resend unlock instructions"
+    passwords:
+      edit:
+        header: "Change your password"
+        label1: "New password"
+        label2: "Confirm new password"
+        minimum_length: "(minimum %{length} characters)"
+      new:
+        submit: "Send me reset password instructions" 
+    shared:
+      links:
+        link1: "Didn't receive confirmation instructions?"
+        link2: "Didn't receive unlock instructions?"
+        link3: "Sign in with "
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
@@ -63,3 +105,15 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+  global:    
+    button:
+      log_in: "Log in"
+      sign_up: "Sign Up"
+      back: "Back"
+      update: "Update"
+    share:
+      link1: "Forgot your password?"
+      welcome: "Hello %{email}!"
+      submit: "Change my password"
+    dialog:
+      you_sure: Are you sure?    
