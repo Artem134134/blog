@@ -1,4 +1,4 @@
-<h2 class="text-center">Sign up</h2>
+<h2 class="text-center"><%= t('global.button.sign_up') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -36,7 +36,7 @@
 
   <div class="mt-0 row"> 
         <div class="d-flex justify-content-end mt-0 mb-0">
-          <%= f.submit "Sign up", class: 'btn btn-outline-primary btn-sm' %>
+          <%= f.submit t('global.button.sign_up'), class: 'btn btn-outline-primary btn-sm' %>
         </div>      
   </div>
 <% end %>
