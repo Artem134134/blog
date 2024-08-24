@@ -13,24 +13,49 @@
   </head>
 
   <body>
-    <div class="container mt-2">
-      <nav class="gap-3 d-flex flex-wrap align-items-start justify-content-start">
-        <% if user_signed_in? %>
-          <p>
-            @ <%= split_user_email(current_user) %>
-            <%= link_to t('.sign_out'), destroy_user_session_path, class: 'btn btn-outline-secondary btn-sm', data: { 'turbo-method': :delete } %>
-          </p>
-        <% else %>
-          <%= link_to t('.sign_in'), new_user_session_path, class: 'btn btn-outline-secondary btn-sm' %>
-        <% end %>
-      </nav>
-    </div>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="<%= asset_path("logo.png") %> " alt="Логотип" style="height: 40px;"/>Blog</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <%= link_to 'Главная', root_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Меню
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><%= link_to 'Ссылка 1', '#', class: 'dropdown-item' %></li>
+                <li><%= link_to 'Ссылка 2', '#', class: 'dropdown-item' %></li>
+                <li><%= link_to 'Ссылка 3', '#', class: 'dropdown-item' %></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <% if user_signed_in? %>
+              <p class="text-white mb-0 me-2">
+                @ <%= split_user_email(current_user) %>
+              </p>
+              <%= link_to t('.sign_out'), destroy_user_session_path, class: 'btn btn-outline-secondary btn-sm', data: { 'turbo-method': :delete } %>
+            <% else %>
+              <%= link_to t('.sign_in'), new_user_session_path, class: 'btn btn-outline-secondary btn-sm' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <main class="container mt-3">
       <%= render 'shared/flash' %>
       <%= yield %>
     </main>
-    
+
     <%= javascript_importmap_tags %>
   </body>
 </html>
