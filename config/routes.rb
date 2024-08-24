@@ -1,16 +1,18 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users
+  scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
+    devise_for :users
 
-  root to: 'articles#index'
+    resource  :contacts, only: %i[new create], path_names: { new: '' }
 
-  get 'terms' => 'pages#terms'
-  get 'about' => 'pages#about'
+    resources :articles do
+      resources :comments, except: %i[show]
+    end
 
-  resource  :contacts, only: %i[new create], path_names: { new: '' }
+    root to: 'articles#index'
 
-  resources :articles do
-    resources :comments, except: %i[show]
+    get 'terms' => 'pages#terms'
+    get 'about' => 'pages#about'
   end
 end
