@@ -23,16 +23,20 @@ ru:
       comment: "Комментарий"
       contact: "Контакт"
       user: "Пользователь"
-  layouts:
-    application:
-      sign_in: "Войти"
-      sign_out: "Выйти"
-  articles:
-    index:
+  shared:
+    navbar:
       main_page: "Главная страница"
       contact_us: "Связаться с нами"
       about: "О нас"
       terms: "Пожелания"
+      sign_in: "Войти"
+      sign_out: "Выйти" 
+      articles: "Статьи"
+      comments: "Комментарии"
+      contacts: "Контакты"    
+  articles:
+    index:      
+      title: "Добро пожаловать в Blog!"  
       header1: "Новая "
       badge1: "статья"
       header2: "Список "
@@ -86,10 +90,18 @@ ru:
       tab_name: "Связаться с нами!"
       button:
         cancel: "Отмена"
-        back: "Назад"
+        back: "На главную"
     create: 
       success: "Ваша форма отправлена."
-      warning: "Не удалось создать контакт. Проверьте ошибки!"     
+      warning: "Не удалось создать контакт. Проверьте ошибки!" 
+  pages:
+    about:
+      title: ""
+      text: "" 
+    terms:
+      title: ""
+      text: ""
+  continued: " ...продолжение"     
   en: Английский
   global:
     button:
@@ -99,3 +111,4 @@ ru:
       submit: Отправить
     dialog:
       you_sure: Вы уверены?  
+    text: ""

@@ -1,11 +1,6 @@
-<% provide :page_title, t('.main_page') %>
-  
-<nav class=" gap-3 d-flex flex-wrap align-items-center justify-content-center ">   
-  <%= link_to t('.contact_us'), new_contacts_path(@contact), class: 'link-secondary' %>
-  <%= link_to t('.about'), about_path(@about), class: 'link-secondary' %>
-  <%= link_to t('.terms'), terms_path(@terms), class: 'link-secondary' %>    
-</nav>
-
+<% currently_at t('shared.navbar.main_page') %>
+<% provide :page_title, t('.title') %>
+ 
 <div class="mb-0 mt-3">
   <h4><%= t('.header1') %><span class="badge rounded-pill text-bg-secondary"><%= t('.badge1') %></span></h4>
   <p><%= render 'form_article', article: @article %></p>

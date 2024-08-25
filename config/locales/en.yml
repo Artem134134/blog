@@ -23,16 +23,20 @@ en:
       comment: "Comment"
       contact: "Contact"
       user: "User"
-  layouts:
-    application:
-      sign_in: "Sign In"
-      sign_out: "Sign Out"
-  articles:
-    index:
+  shared:
+    navbar:
       main_page: "Main page"
       contact_us: "Contact Us"
       about: "About"
       terms: "Terms"
+      sign_in: "Sign In"
+      sign_out: "Sign Out"
+      articles: "Articles"
+      comments: "Comments"
+      contacts: "Contacts"  
+  articles:
+    index: 
+      title: Welcome to Blog!     
       header1: "Article "
       badge1: "New"
       header2: "List of "
@@ -86,10 +90,19 @@ en:
       tab_name: "Contact Us"
       button:
         cancel: "Cancel"
-        back: "Back"
+        back: "Main page"
     create: 
       success: "Your form has been submitted."
-      warning: "Failed to create contact. Please check the errors!"       
+      warning: "Failed to create contact. Please check the errors!" 
+  pages:
+    about:
+      title: ""
+      text: "" 
+    terms:
+      title: ""
+      text: ""
+  continued: " ...continued" 
+           
   en: English
   global:
     button:
@@ -99,4 +112,4 @@ en:
       submit: Submit
     dialog:
       you_sure: Are you sure?
-   
+    text: ""
