@@ -1,16 +1,22 @@
-<h2><%= t('.header') %></h2>
+<h2 class="text-center"><%= t('.header') %></h2>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+  <div class="mt-3 mb-2 row"> 
+    <%= f.label :email, class: 'fst-italic col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit t('.header') %>
+  
+  <div class="mt-0 row"> 
+    <div class="d-flex justify-content-end mt-0 mb-0">
+      <%= f.submit t('.header'), class: 'btn btn-outline-primary btn-sm' %>
+    </div>      
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="mt-0 mb-0 row">
+  <%= render "devise/shared/links" %>
+</div>

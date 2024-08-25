@@ -1,7 +1,13 @@
+<% currently_at t('.register_an_account') %>
+<% provide :page_title, t('.register_an_account') %>
+
+<div class="container-fluid">
+
 <h2 class="text-center"><%= t('global.button.sign_up') %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
 
   <div class="mt-3 mb-2 row"> 
     <%= f.label :email, class: 'fst-italic col-sm-2 col-form-label' %>
@@ -40,6 +46,7 @@
         </div>      
   </div>
 <% end %>
+</div>
 
 <div class="mt-0 mb-0 row">
   <%= render "devise/shared/links" %>
