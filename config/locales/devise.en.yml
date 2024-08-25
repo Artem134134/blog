@@ -61,18 +61,17 @@ en:
         waiting: "Currently waiting confirmation for: %{email}"
         hint1: "leave blank if you don't want to change it"
         hint2: "we need your current password to confirm your changes"
-
     unlocks:
       new: 
         header: "Resend unlock instructions"
     passwords:
       edit:
-        header: "Change your password"
-        label1: "New password"
+        change_pass: "Change password"
         label2: "Confirm new password"
         minimum_length: "(minimum %{length} characters)"
+        edit_password: ""
       new:
-        submit: "Send me reset password instructions" 
+        send_me_instructions: "Send me reset password instructions" 
     shared:
       links:
         link1: "Didn't receive confirmation instructions?"
@@ -86,10 +85,17 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
+    registrations:
+      edit:
+        edit_account: "Editing an account"
+      new:
+        register_an_account: "Register an account"
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      new:
+        login_to_account: "Login to your account"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
@@ -113,6 +119,7 @@ en:
     share:
       link1: "Forgot your password?"
       welcome: "Hello %{email}!"
-      submit: "Change my password"
+      change_my_pass: "Change my password"
+      new_password: "New Password"
     dialog:
-      you_sure: Are you sure?    
+      you_sure: "Are you sure?"    
