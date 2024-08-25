@@ -1,0 +1,41 @@
+<%= provide :main_menu do %>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="<%= asset_path("logo.png") %> " alt="Logo" style="height: 40px;"/>Blog</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <%= nav_tab t('.main_page'), root_path, class: 'nav-link px-2', current_page: current_page %>
+        </li>
+        <li class="nav-item">
+            <%= nav_tab t('.contact_us'), new_contacts_path(@contact), class: 'nav-link px-2', current_page: current_page %>
+        </li>
+        <li class="nav-item">
+            <%= nav_tab t('.about'), about_path(@about), class: 'nav-link px-2', current_page: current_page %>
+        </li>
+        <li class="nav-item">
+            <%= nav_tab t('.terms'), terms_path(@terms), class: 'nav-link px-2', current_page: current_page %>    
+        </li>
+      </ul>
+
+          <div class="d-flex">
+            <% if user_signed_in? %>
+              <p class="text-white mb-0 me-2">
+                @ <%= split_user_email(current_user) %>
+              </p>
+              <%= link_to t('.sign_out'), destroy_user_session_path, class: 'btn btn-outline-secondary btn-sm', data: { 'turbo-method': :delete } %>
+            <% else %>
+              <%= link_to t('.sign_in'), new_user_session_path, class: 'btn btn-outline-secondary btn-sm' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </nav>
+<% end %>
