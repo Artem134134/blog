@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     @comment = @article.comments.build(comment_params)
 
     if @comment.save
-      flash[:success] = '.success'
+      flash[:success] = t '.success'
       redirect_to article_path(@article)
     else
       @pagy, @comments = pagy @article.comments.order created_at: :desc
@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      flash[:success] = '.success'
+      flash[:success] = t '.success'
       redirect_to article_path(@article, anchor: dom_id(@comment))
     else
       flash.now[:warning] = t '.warning'
@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    flash[:success] = '.success'
+    flash[:success] = t '.success'
     redirect_to article_path(@article)
   end
 

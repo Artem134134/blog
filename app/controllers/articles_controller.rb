@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
   def update
     if @article.update(article_params)
       flash[:success] = t '.success'
-      redirect_to articles_path(@article, anchor: dom_id(@article))
+      redirect_to articles_path(@articles, anchor: dom_id(@article))
     else
       flash.now[:warning] = t '.warning'
       render :edit
