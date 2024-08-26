@@ -1,10 +1,2 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap"; 
-
-.field_with_errors {
-  .form-control {
-    border-color: $red;
-  }
-  label {
-    color: $red;
-  }
-} 
+@import 'custom_style';
