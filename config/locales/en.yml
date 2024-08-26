@@ -25,7 +25,6 @@ en:
       user: "User"
   shared:
     navbar:
-      main_page: "Main page"
       contact_us: "Contact Us"
       about: "About"
       terms: "Terms"
@@ -90,7 +89,6 @@ en:
       tab_name: "Contact Us"
       button:
         cancel: "Cancel"
-        back: "Main page"
     create: 
       success: "Your form has been submitted."
       warning: "Failed to create contact. Please check the errors!" 
@@ -101,15 +99,17 @@ en:
     terms:
       title: ""
       text: ""
-  continued: " ...continued" 
-           
+  continued: " ...continued"          
   en: English
   global:
     button:
+      main_page: "Main page"
       delete: Delete
       edit: Edit
       show: Show
       submit: Submit
     dialog:
       you_sure: Are you sure?
+    errors:
+      error_email: "Please enter a valid email"
     text: ""

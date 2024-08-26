@@ -25,7 +25,6 @@ ru:
       user: "Пользователь"
   shared:
     navbar:
-      main_page: "Главная страница"
       contact_us: "Связаться с нами"
       about: "О нас"
       terms: "Пожелания"
@@ -90,10 +89,9 @@ ru:
       tab_name: "Связаться с нами!"
       button:
         cancel: "Отмена"
-        back: "На главную"
     create: 
       success: "Ваша форма отправлена."
-      warning: "Не удалось создать контакт. Проверьте ошибки!" 
+      warning: "Не удалось создать контакт. Проверьте ошибки!"  
   pages:
     about:
       title: ""
@@ -105,10 +103,13 @@ ru:
   en: Английский
   global:
     button:
+      main_page: "Главная страница"
       delete: Удалить
       edit: Изменить
       show: Показать
       submit: Отправить
     dialog:
-      you_sure: Вы уверены?  
+      you_sure: Вы уверены?
+    errors:
+      error_email: "Пожалуйста, введите действительный адрес эл. почты"  
     text: ""
