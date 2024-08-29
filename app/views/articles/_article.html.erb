@@ -1,5 +1,9 @@
 <div class="mb-3">
-<%= tag.article class: 'card mt-0 mb-2', id: dom_id(article) do %> 
+  <%= tag.article class: 'card mt-0 mb-2', id: dom_id(article) do %>   
+    <section class="card-header mt-2">
+      <p><%= username_or_email(article.user) %></p>
+    </section>
+
   <div class="card-body"> 
     <section class="card-text text-center"> 
       <div>      
@@ -17,5 +21,6 @@
       data: { turbo_confirm: t('global.dialog.you_sure'), turbo_method: :delete } %> 
     </nav>         
 </div> 
+
 <% end %>
 </div>
