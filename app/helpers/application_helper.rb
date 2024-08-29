@@ -39,8 +39,5 @@ module ApplicationHelper
       base_title
     end
   end
-
-  def split_user_email(obj)
-    obj.email.split('@')[0]
-  end
+  
 end
