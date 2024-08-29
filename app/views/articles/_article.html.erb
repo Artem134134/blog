@@ -1,7 +1,8 @@
 <div class="mb-3">
   <%= tag.article class: 'card mt-0 mb-2', id: dom_id(article) do %>   
     <section class="card-header mt-0">
-      <p><%= username_or_email(article.user) %></p>
+      <%= gravatar(article.user) %>
+      <%= username_or_email(article.user) %>
     </section>
 
   <div class="card-body"> 
