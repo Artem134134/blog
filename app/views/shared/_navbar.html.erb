@@ -25,7 +25,7 @@
         </li>
       </ul>
 
-      <ul class="nav col-12 col-lg-auto mb-2 mb-md-0">
+      <ul class="nav col-12 col-lg-auto mb-2 mb-md-0 me-3">
           <li class="dropdown">
             <%= link_to '#', class: 'nav-link px-2 dropdown-toggle text-white',
               data: {"bs-toggle": 'dropdown'} do %>
@@ -33,7 +33,7 @@
               <%= t I18n.locale %>
             <% end %>
             
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu ">
               <% I18n.available_locales.each do |locale| %>
                 <li>
                   <% if I18n.locale == locale %>
@@ -48,11 +48,11 @@
           </li>
         </ul>
 
-          <div class="d-flex">
+          <div class="d-flex align-items-center">
             <% if user_signed_in? %>
-              <p class="text-white me-2">
+              <p class="text-white mb-0 me-2 d-flex align-items-center">
                 <%= gravatar(current_user) %>
-                <%= username_or_email(current_user) %>           
+                <span class="ms-2"><%= username_or_email(current_user) %></span>           
               </p>
               <%= link_to t('.sign_out'), destroy_user_session_path, class: 'btn btn-outline-secondary btn-sm', data: { 'turbo-method': :delete } %>
             <% else %>
@@ -61,5 +61,5 @@
           </div>
         </div>
       </div>
-    </nav>
+  </nav>
 <% end %>
