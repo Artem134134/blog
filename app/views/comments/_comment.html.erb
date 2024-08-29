@@ -1,6 +1,13 @@
-<%= tag.article class: 'mb-0 mt-0', id: dom_id(comment) do %>  
-  <div class="card-body ms-5">
-    <section class="card-text">
+<%= tag.article class: 'card mb-3 border-0', id: dom_id(comment) do %>    
+  <div class="row g-0">
+     <div class="col-sm-auto text-sm-center align-self-center">
+      <%= gravatar(comment.user, size: 60, css_class: 'd-block') %>
+      <%= username_or_email(comment.user) %>
+    </div>
+    
+<div class="col-sm">      
+  <div class="card-body ms-2">
+    <section class="card-text mt-5">
       <div>
         <p><i><%= t('.label') %><strong><%= comment.author %></strong></i></p>
         <p><i><%= comment.body %></i></p>
@@ -16,5 +23,6 @@
           class: 'btn btn-outline-danger btn-sm ',
           data: { turbo_confirm: t('global.dialog.you_sure'), turbo_method: :delete } %>    
       </nav> 
-    </div>
+  </div>
+</div>
   <% end %> 
