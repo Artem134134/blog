@@ -2,6 +2,11 @@
 <% currently_at t('shared.navbar.articles') %>
 
 <article class="mb-4 card"> 
+  <section class="card-header mt-0">
+      <%= gravatar(@article.user) %>
+      <%= username_or_email(@article.user) %>
+    </section>
+
   <div class="card-body">
     <section class="card-text text-center">
 
@@ -34,5 +39,5 @@
 
 <%= render partial: 'comments/comment', collection: @comments,
   as: :comment, locals: {article: @article} %>
-          
+
 <%== pagination @pagy %>      
