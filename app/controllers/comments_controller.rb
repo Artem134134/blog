@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
   def edit; end
 
   def create
-    @comment = @article.comments.build(comment_params)
+    @comment = @article.comments.build(create_comment_params)
 
     if @comment.save
       flash[:success] = t '.success'
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if @comment.update(comment_params)
+    if @comment.update(update_comment_params)
       flash[:success] = t '.success'
       redirect_to article_path(@article, anchor: dom_id(@comment))
     else
@@ -44,8 +44,12 @@ class CommentsController < ApplicationController
 
   private
 
-  def comment_params
+  def create_comment_params
     params.require(:comment).permit(:author, :body).merge(user: current_user)
+  end
+
+  def update_comment_params
+    params.require(:comment).permit(:author, :body)
   end
 
   def set_article
