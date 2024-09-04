@@ -45,6 +45,9 @@ gem 'pagy', '~> 9.0.5'
 gem 'sassc-rails'
 gem 'rails-i18n', '~> 7.0.9'
 gem 'rubyzip', '~> 2.3.2'
+gem 'caxlsx'
+gem 'caxlsx_rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
