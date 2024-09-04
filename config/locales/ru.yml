@@ -91,7 +91,16 @@ ru:
         cancel: "Отмена"
     create: 
       success: "Ваша форма отправлена."
-      warning: "Не удалось создать контакт. Проверьте ошибки!"  
+      warning: "Не удалось создать контакт. Проверьте ошибки!" 
+  admin:
+    users:
+      index:
+        admin_users: "Зона администрирования"
+        users: "Пользователи" 
+        username: "Имя пользователя"
+        email: "Эл. почта"
+        created_at: "Создано"
+        updated_at: "Обнавлено"
   pages:
     about:
       title: ""

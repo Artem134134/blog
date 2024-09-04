@@ -92,6 +92,15 @@ en:
     create: 
       success: "Your form has been submitted."
       warning: "Failed to create contact. Please check the errors!" 
+  admin:
+    users:
+      index:
+        admin_users: "Administration area"
+        users: "Users"
+        username: "User name"
+        email: "Email"
+        created_at: "Created at"
+        updated_at: "Updated at"
   pages:
     about:
       title: ""
