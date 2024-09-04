@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
       flash[:success] = t '.success'
       redirect_to article_path(@article)
     else
-      @pagy, @comments = pagy @article.comments.order created_at: :desc
+      @pagy, @comments = pagy @article.comments.includes(:user).order created_at: :desc
       flash.now[:warning] = t '.warning'
       render 'articles/show'
     end

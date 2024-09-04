@@ -8,12 +8,12 @@ class ArticlesController < ApplicationController
 
   def index
     @article = Article.new
-    @pagy, @articles = pagy Article.order(created_at: :desc)
+    @pagy, @articles = pagy Article.includes(:user).order(created_at: :desc)
   end
 
   def show
     @comment = @article.comments.build
-    @pagy, @comments = pagy @article.comments.order created_at: :desc
+    @pagy, @comments = pagy @article.comments.includes(:user).order created_at: :desc
   end
 
   def new
