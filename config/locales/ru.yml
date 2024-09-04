@@ -101,6 +101,7 @@ ru:
         email: "Эл. почта"
         created_at: "Создано"
         updated_at: "Обнавлено"
+        download: "Скачать в архиве XLSX"
   pages:
     about:
       title: ""

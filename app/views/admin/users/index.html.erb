@@ -1,7 +1,12 @@
 <% provide :page_title, t('.admin_users') %>
 <% currently_at t('.users') %>
 
-<h1 class="text-center mb-4"><%= t('.admin_users') %></h1>
+<h3 class="text-center mb-3"><%= t('.admin_users') %></h3>
+
+<div class="btn-group mb-3">
+  <%= link_to t('.download'), admin_users_path(format: :zip),
+    class: 'btn btn-secondary' %>
+</div>
 
 <%= pagination @pagy %>
 
@@ -10,9 +15,9 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col"><%= t('.username') %></th>
-      <th scope="col">Email</th>
-      <th scope="col">Created at</th>
-      <th scope="col">Updated at</th>
+      <th scope="col"><%= t('.email') %></th>
+      <th scope="col"><%= t('.created_at') %></th>
+      <th scope="col"><%= t('.updated_at') %></th>
     </tr>
   </thead>
   <tbody>
