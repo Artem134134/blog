@@ -10,6 +10,11 @@ Rails.application.routes.draw do
       resources :comments, except: %i[show]
     end
 
+    namespace :admin do
+      resources  :users, only: %i[index ]
+
+    end
+
     root to: 'articles#index'
 
     get 'terms' => 'pages#terms'
