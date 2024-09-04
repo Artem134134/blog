@@ -12,3 +12,4 @@ log/development.log
 db/production.sqlite3
 db/production.sqlite3-shm
 log/production.log
+log/bullet.log
