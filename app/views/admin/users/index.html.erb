@@ -3,10 +3,7 @@
 
 <h3 class="text-center mb-3"><%= t('.admin_users') %></h3>
 
-<div class="btn-group mb-3">
-  <%= link_to t('.download'), admin_users_path(format: :zip),
-    class: 'btn btn-secondary' %>
-</div>
+
 
 <%= pagination @pagy %>
 
@@ -25,4 +22,27 @@
   </tbody>
 </table>
 
+<div class="d-grid d-md-flex justify-content-md-end mt-3 mb-3">
+  <%= link_to t('.download'), admin_users_path(format: :zip),
+    class: 'btn btn-outline-secondary' %>
+</div>
+
 <%= pagination @pagy %>
+
+<h2 class="mb-3"><%= t('.upload') %></h2>
+
+<%= form_with url: admin_users_path do |f| %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :archive, t('.select_archive') %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.file_field :archive, class: 'form-control' %>
+    </div>
+  </div>
+
+<div class="d-grid d-md-flex justify-content-md-end mt-3">
+  <%= f.submit t('.sub_upload'), class: 'btn btn-outline-primary' %>
+</div>
+<% end %>
