@@ -102,6 +102,11 @@ ru:
         created_at: "Создано"
         updated_at: "Обнавлено"
         download: "Скачать в архиве XLSX"
+        upload: "Загрузить пользователей из XLSX"
+        sub_upload: "Загрузить!"
+        select_archive: "Выбрать архив"
+    create:
+      success: "Пользователи импортированы!"
   pages:
     about:
       title: ""

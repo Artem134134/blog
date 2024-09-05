@@ -102,6 +102,11 @@ en:
         created_at: "Created at"
         updated_at: "Updated at"
         download: "Download zipped XLSX"
+        upload: "Upload users from XLSX"
+        sub_upload: "Upload!"
+        select_archive: "Select archive"
+    create:
+      success: "Users imported!"
   pages:
     about:
       title: ""
