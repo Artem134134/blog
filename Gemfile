@@ -47,6 +47,7 @@ gem 'rails-i18n', '~> 7.0.9'
 gem 'rubyzip', '~> 2.3.2'
 gem 'caxlsx', '~> 4.1.0'
 gem 'caxlsx_rails', '~> 0.6.4'
+gem 'rubyXL', '~> 3.4.27'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
@@ -57,6 +58,7 @@ group :test, :development do
   gem 'factory_bot_rails', require: false
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'pry-rails'
 end
 
 group :development do
