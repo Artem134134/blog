@@ -18,7 +18,7 @@ module Admin
 	  def create
 	  	if params[:archive].present?
         UserBulkService.call params[:archive]
-        flash[:success] = t '.success'
+        flash[:success] = t 'admin.create.success'
       end
 
       redirect_to admin_users_path  
