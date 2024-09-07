@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="<%= I18n.locale %>" data-bs-theme="dark">
   <head>
     <title><%= full_title(yield(:page_title)) %></title>
     <meta charset="utf-8">
@@ -11,7 +11,7 @@
 
   </head>
 
-  <body>
+  <body data-lang="<%= I18n.locale %>">
      <%= yield :main_menu %>
 
     <main class="container mt-3">
