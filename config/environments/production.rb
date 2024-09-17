@@ -5,6 +5,8 @@ require 'active_support/core_ext/integer/time'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.sass.inline_source_maps = false
+  
   # Code is not reloaded between requests.
   config.cache_classes = true
 

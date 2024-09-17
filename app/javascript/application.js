@@ -1,5 +1,6 @@
-// import "bootstrap"
 
-import { Turbo } from "@hotwired/turbo-rails"
+import '@hotwired/turbo-rails'
 import "controllers"
-//= require bootstrap.bundle
+// window.process = { env: { NODE_ENV: 'production' } };
+import "popper"
+import "bootstrap"
