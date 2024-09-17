@@ -115,7 +115,8 @@ ru:
       title: ""
       text: ""
   continued: " ...продолжение"     
-  en: Английский
+  en: "Английский"
+  ru: "Русский"
   global:
     button:
       main_page: "Главная страница"

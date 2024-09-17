@@ -115,7 +115,8 @@ en:
       title: ""
       text: ""
   continued: " ...continued"          
-  en: English
+  en: "English"
+  ru: "Russian"
   global:
     button:
       main_page: "Main page"
