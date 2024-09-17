@@ -42,7 +42,9 @@ gem 'jbuilder'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 gem 'pagy', '~> 9.0.5'
+gem 'bootstrap', '~> 5.3.3'
 gem 'sassc-rails'
+
 gem 'rails-i18n', '~> 7.0.9'
 gem 'rubyzip', '~> 2.3.2'
 gem 'caxlsx', '~> 4.1.0'
