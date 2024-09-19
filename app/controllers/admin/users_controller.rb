@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 module Admin
-
 	class UsersController < ApplicationController
 		before_action :authenticate_user! # Проверка аутентификации
+		before_action :set_user!, only: %i[edit update destroy]
 
 		def index 
 			respond_to do |format|
@@ -19,15 +19,40 @@ module Admin
 	  	if params[:archive].present?
         UserBulkService.call params[:archive]
         flash[:success] = t 'admin.create.success'
+        redirect_to admin_users_path
+      else 
+      	@pagy, @users = pagy User.order(created_at: :desc)
+      	flash.now[:warning] = t '.warning'
+      	render 'admin/users/index'
       end
-
-      redirect_to admin_users_path  
+			
+        
 	  end
+
+	  def edit; end
+
+	  def update 
+	  	if @user.update user_params
+        flash[:success] = t('admin.update.success', user: @user.username)
+        redirect_to admin_users_path
+      else
+      	flash.now[:warning] = t '.warning'
+        render :edit
+      end
+	  end	
+
+	  def destroy
+      @user.destroy
+      flash[:success] = t('admin.destroy.success', user: @user.username)
+      redirect_to admin_users_path
+    end
 
 		private
 
 		def user_params
-		  params.require(:user).permit(:email, :password, :password_confirmation, :username)
+		  params.require(:user).permit(:email, :username,
+		   :password, :password_confirmation, :old_password, 
+		   	 :role).merge(admin_edit: true)
 		end
 
 		def respond_with_zipped_users
@@ -42,7 +67,11 @@ module Admin
 
 	      compressed_filestream.rewind
 	      send_data compressed_filestream.read, filename: 'users.zip'
-	    end
+	  end
+
+	  def set_user!
+	  	@user = User.find params[:id]
+	  end
 	end
 end
 
