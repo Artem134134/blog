@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_08_30_101549) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_17_142217) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "text"
@@ -48,8 +48,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_30_101549) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "gravatar_hash"
+    t.integer "role", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["role"], name: "index_users_on_role"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
