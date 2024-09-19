@@ -11,8 +11,11 @@ ru:
         email: "Эл. почта"
         message: "Сообщение"
       user:
+        role: "Роль"
         remember_me: "Запомнить меня"
         email: "Эл. почта"
+        created_at: "Создано"
+        updated_at: "Обнавлено"
         password: "Пароль"
         password_verification: "Проверка пароля"
         password_confirmation: "Подтверждение пароля"
@@ -32,7 +35,8 @@ ru:
       sign_out: "Выйти" 
       articles: "Статьи"
       comments: "Комментарии"
-      contacts: "Контакты"    
+      contacts: "Контакты" 
+      users: "Пользователи"    
   articles:
     index:      
       title: "Добро пожаловать в Blog!"  
@@ -96,17 +100,27 @@ ru:
     users:
       index:
         admin_users: "Зона администрирования"
-        users: "Пользователи" 
-        username: "Имя пользователя"
-        email: "Эл. почта"
-        created_at: "Создано"
-        updated_at: "Обнавлено"
+        users: "Пользователи"        
         download: "Скачать в архиве XLSX"
         upload: "Загрузить пользователей из XLSX"
-        sub_upload: "Загрузить!"
+        sub_upload: "Загрузить"
         select_archive: "Выбрать архив"
+        registration: "Регистрация пользователя"
+      edit:
+        title: "Редактирование пользователя"
     create:
-      success: "Пользователи импортированы!"
+      success: "Пользователи импортированы"
+      warning: "Ошибка, пользователи не импортированы!"
+    update:
+      success: "Пользователь успешно обновлен."
+      warning: "Не удалось обновить пользователя. Проверьте ошибки!"
+    destroy:
+      success: "Пользователь был удален!"
+  users:    
+    global:
+      forms:
+        register: "Зарегистрируйтесь"
+        save: "Сохранить" 
   pages:
     about:
       title: ""
@@ -118,14 +132,20 @@ ru:
   en: "Английский"
   ru: "Русский"
   global:
+    user:
+      roles:
+        guest: "Гость"       
+        moderator: "Модератор"
+        admin: "Админ"
+        banned: "Запрещен"
     button:
       main_page: "Главная страница"
-      delete: Удалить
-      edit: Изменить
-      show: Показать
-      submit: Отправить
+      delete: "Удалить"
+      edit: "Изменить"
+      show: "Показать"
+      submit: "Отправить"
     dialog:
-      you_sure: Вы уверены?
+      you_sure: "Вы уверены?"
     errors:
       error_email: "Пожалуйста, введите действительный адрес эл. почты"  
     text: ""

@@ -11,8 +11,11 @@ en:
         email: "Email"
         message: "Message"
       user:
+        role: "Role"
         remember_me: "Remember me"
         email: "Email"
+        created_at: "Created at"
+        updated_at: "Updated at"
         password: "Password"
         password_verification: "Password verification"
         password_confirmation: "Password confirmation"
@@ -32,7 +35,8 @@ en:
       sign_out: "Sign Out"
       articles: "Articles"
       comments: "Comments"
-      contacts: "Contacts"  
+      contacts: "Contacts"
+      users: "Users"  
   articles:
     index: 
       title: Welcome to Blog!     
@@ -96,17 +100,27 @@ en:
     users:
       index:
         admin_users: "Administration area"
-        users: "Users"
-        username: "User name"
-        email: "Email"
-        created_at: "Created at"
-        updated_at: "Updated at"
+        users: "Users"       
         download: "Download zipped XLSX"
         upload: "Upload users from XLSX"
-        sub_upload: "Upload!"
+        sub_upload: "Upload"
         select_archive: "Select archive"
+        registration: "User registration"
+      edit:
+        title: "Edit user"
     create:
-      success: "Users imported!"
+      success: "Users imported"
+      warning: "Error, users not imported!"
+    update:
+      success: "The user has been updated"
+      warning: "Failed to update user. Please check the errors!"
+    destroy:
+      success: "The user has been deleted!" 
+  users:    
+    global:
+      forms:
+        register: "Register"
+        save: "Save" 
   pages:
     about:
       title: ""
@@ -118,14 +132,20 @@ en:
   en: "English"
   ru: "Russian"
   global:
+    user:
+      roles:
+        guest: "Guest"        
+        moderator: "Moderator"
+        admin: "Admin"
+        banned: "Banned"
     button:
       main_page: "Main page"
-      delete: Delete
-      edit: Edit
-      show: Show
-      submit: Submit
+      delete: "Delete"
+      edit: "Edit"
+      show: "Show"
+      submit: "Submit"      
     dialog:
-      you_sure: Are you sure?
+      you_sure: "Are you sure?"
     errors:
       error_email: "Please enter a valid email"
     text: ""
