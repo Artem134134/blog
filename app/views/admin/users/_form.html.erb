@@ -1,6 +1,7 @@
 <%= render 'shared/errors', object: @user %>
 
-<%= form_with model: [:admin, @user] do |f| %>
+<%= form_with model: [:admin, @user], data: {turbo: false} do |f| %>
+
   <div class="mb-3 row">
     <div class="col-sm-2 col-form-label">
       <%= f.label :email %>
@@ -21,6 +22,7 @@
     </div>
   </div>
 
+  <% if @user.persisted? %> <!-- Проверяем, существует ли user в БД-->
   <div class="mb-3 row">
     <div class="col-sm-2 col-form-label">
       <%= f.label :role %>
@@ -30,6 +32,7 @@
       <%= f.select :role, user_roles, {}, class: 'form-select form-select-lg' %>
     </div>
   </div>
+  <% end %>
 
   <div class="mb-3 row">
     <div class="col-sm-2 col-form-label">
@@ -41,7 +44,7 @@
     </div>
   </div>
 
-  <div class="mb-3 row">
+  <div class="mb-1 row">
     <div class="col-sm-2 col-form-label">
       <%= f.label :password_confirmation %>
     </div>
@@ -51,6 +54,12 @@
     </div>
   </div>
 
-  <% t_key = (user.new_record? ? "register" : "save") %>
-  <%= f.submit t(t_key, scope: 'users.global.forms'), class: 'btn btn-primary btn-lg' %>
+  <div class="d-grid d-md-flex justify-content-md-end">
+    <%= link_to t('users.global.forms.back'), admin_user_path,
+        class: 'btn btn-outline-secondary ' %>
+
+    <% t_key = (user.new_record? ? "register" : "save") %>
+    <%= f.submit t(t_key, scope: 'users.global.forms'),
+        class: 'btn btn-outline-primary ms-2' %>
+  </div>
 <% end %>
