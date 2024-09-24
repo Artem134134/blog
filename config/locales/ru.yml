@@ -106,6 +106,8 @@ ru:
         sub_upload: "Загрузить"
         select_archive: "Выбрать архив"
         registration: "Регистрация пользователя"
+      new:
+        title: "Регистрация пользователя" 
       edit:
         title: "Редактирование пользователя"
     create:

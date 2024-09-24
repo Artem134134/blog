@@ -106,6 +106,8 @@ en:
         sub_upload: "Upload"
         select_archive: "Select archive"
         registration: "User registration"
+      new:
+        title: "User registration"       
       edit:
         title: "Edit user"
     create:
