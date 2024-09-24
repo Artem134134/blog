@@ -113,13 +113,13 @@ en:
     create:
       success: "Users imported"
       warning: "Error, failed to import users!"
-      user_success: "User registered successfully"
+      user_success: "User - %{user} registered successfully"
       user_warning: "Error, failed to register user!"
     update:
-      success: "The user has been updated"
+      success: "The user - %{user} has been updated"
       warning: "Failed to update user. Please check the errors!"
     destroy:
-      success: "The user has been deleted!" 
+      success: "The user - %{user} has been deleted!" 
   users:    
     global:
       forms:
