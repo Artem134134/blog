@@ -15,18 +15,28 @@ module Admin
 		 	end	
 	  end
 
+	  def new
+    	@user = User.new
+  	end
+
 	  def create
 	  	if params[:archive].present?
-        UserBulkService.call params[:archive]
-        flash[:success] = t 'admin.create.success'
+        UserBulkService.call (params[:archive])
+        flash[:success] = t('admin.create.success')
         redirect_to admin_users_path
       else 
-      	@pagy, @users = pagy User.order(created_at: :desc)
-      	flash.now[:warning] = t '.warning'
-      	render 'admin/users/index'
-      end
-			
-        
+      	 @user = User.new(user_params)
+
+      	if @user.save
+      		flash[:success] = t('admin.create.user_success',
+      			user: @user.username)      		
+      		redirect_to admin_users_path
+      	else 
+      		flash.now[:warning] = t('admin.create.user_warning')
+	      	@pagy, @users = pagy User.order(created_at: :desc)	      	
+	      	render :new
+      	end			
+      end			        
 	  end
 
 	  def edit; end
@@ -36,7 +46,7 @@ module Admin
         flash[:success] = t('admin.update.success', user: @user.username)
         redirect_to admin_users_path
       else
-      	flash.now[:warning] = t '.warning'
+      	flash.now[:warning] = t('admin.update.warning')
         render :edit
       end
 	  end	
