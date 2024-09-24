@@ -134,6 +134,7 @@ en:
   global:
     user:
       roles:
+        basic: "Basic"
         guest: "Guest"        
         moderator: "Moderator"
         admin: "Admin"

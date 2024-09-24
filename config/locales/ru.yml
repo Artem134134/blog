@@ -134,6 +134,7 @@ ru:
   global:
     user:
       roles:
+        basic: "Базовый"
         guest: "Гость"       
         moderator: "Модератор"
         admin: "Админ"
