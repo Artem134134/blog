@@ -2,7 +2,7 @@
 <% provide :page_title, t('.register_an_account') %>
 
 <div class="container-fluid">
-
+  
 <h2 class="text-center"><%= t('global.button.sign_up') %></h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <div class="mt-0 mb-2 row">
+    <div class="mt-0 mb-2 row">
     <%= f.label :password, class: 'fst-italic col-sm-2 col-form-label' %>
 
     <div class="col-sm-10">
