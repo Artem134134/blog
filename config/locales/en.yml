@@ -112,7 +112,9 @@ en:
         title: "Edit user"
     create:
       success: "Users imported"
-      warning: "Error, users not imported!"
+      warning: "Error, failed to import users!"
+      user_success: "User registered successfully"
+      user_warning: "Error, failed to register user!"
     update:
       success: "The user has been updated"
       warning: "Failed to update user. Please check the errors!"
@@ -123,6 +125,7 @@ en:
       forms:
         register: "Register"
         save: "Save" 
+        back: "Back to administration area"
   pages:
     about:
       title: ""
