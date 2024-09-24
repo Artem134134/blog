@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  enum role: { guest: 0, moderator: 1, admin: 2, banned: 3 }, _suffix: true
+  enum role: { basic: 0, moderator: 1, admin: 2, banned: 3 }, _suffix: :role
 
   attr_accessor :old_password, :admin_edit
 
