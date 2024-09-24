@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
 
     namespace :admin do
-      resources  :users, only: %i[index create edit update destroy]
+      resources  :users
     end
 
     root to: 'articles#index'
