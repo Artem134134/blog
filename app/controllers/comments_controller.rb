@@ -3,13 +3,13 @@
 class CommentsController < ApplicationController
   include ActionView::RecordIdentifier
 
-  before_action :authenticate_user!, only: %i[create]
+  before_action :authenticate_user!, except: %i[index]
   before_action :set_article
   before_action :set_comment, except: %i[create]
   before_action :load_comments, only: %i[index create]
 
   def index
-    #@pagy, @comments = pagy(@article.comments.includes(:user).order(created_at: :desc))
+    
   end
 
   def new
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
       flash[:success] = t '.success'
       redirect_to article_path(@article)
     else
-      #@pagy, @comments = pagy @article.comments.includes(:user).order created_at: :desc
+      
       flash.now[:warning] = t '.warning'
       render 'articles/show'
     end
