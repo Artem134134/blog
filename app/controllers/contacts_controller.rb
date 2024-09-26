@@ -2,6 +2,9 @@
 
 class ContactsController < ApplicationController
   include ContactsHelper
+ # include ActionView::RecordIdentifier на будущее dom_id или работа с формами
+  
+  before_action :authenticate_user!, only: %i[new create]
 
   def new
     @contact = Contact.new
