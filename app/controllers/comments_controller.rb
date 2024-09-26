@@ -6,12 +6,15 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create]
   before_action :set_article
   before_action :set_comment, except: %i[create]
+  before_action :load_comments, only: %i[index create]
+
+  def index
+    #@pagy, @comments = pagy(@article.comments.includes(:user).order(created_at: :desc))
+  end
 
   def new
     @comment = @article.comments.build
   end
-
-  def edit; end
 
   def create
     @comment = @article.comments.build(create_comment_params)
@@ -20,11 +23,13 @@ class CommentsController < ApplicationController
       flash[:success] = t '.success'
       redirect_to article_path(@article)
     else
-      @pagy, @comments = pagy @article.comments.includes(:user).order created_at: :desc
+      #@pagy, @comments = pagy @article.comments.includes(:user).order created_at: :desc
       flash.now[:warning] = t '.warning'
       render 'articles/show'
     end
   end
+
+  def edit; end
 
   def update
     if @comment.update(update_comment_params)
@@ -58,5 +63,9 @@ class CommentsController < ApplicationController
 
   def set_comment
     @comment = @article.comments.find(params[:id])
+  end
+
+  def load_comments
+    @pagy, @comments = pagy(@article.comments.includes(:user).order(created_at: :desc))
   end
 end
