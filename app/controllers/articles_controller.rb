@@ -3,7 +3,7 @@
 class ArticlesController < ApplicationController
   include ActionView::RecordIdentifier
 
-  before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
   before_action :set_article, only: %i[show destroy edit update]
 
   def index
