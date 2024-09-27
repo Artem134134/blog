@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Comment < ApplicationRecord
+  include Authorship
+  
   belongs_to :article
   belongs_to :user
 

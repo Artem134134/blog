@@ -7,6 +7,8 @@ class CommentsController < ApplicationController
   before_action :set_article
   before_action :set_comment, except: %i[create]
   before_action :load_comments, only: %i[index create]
+  before_action :authorize_comment!, except: %i[index]
+  after_action :verify_authorized, except: %i[index] # метод из pundit
 
   def index
     
@@ -67,5 +69,9 @@ class CommentsController < ApplicationController
 
   def load_comments
     @pagy, @comments = pagy(@article.comments.includes(:user).order(created_at: :desc))
+  end
+
+  def authorize_comment!
+    authorize(@comment || Comment)
   end
 end

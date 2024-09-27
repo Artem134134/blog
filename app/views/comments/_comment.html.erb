@@ -17,11 +17,16 @@
       </section>
 
       <nav class="d-flex justify-content-start mt-1 mb-3">
+      <% if policy(comment).edit? %> 
         <%= link_to t('global.button.edit'), edit_article_comment_path(article, comment),
           data: {turbo: false}, class: 'btn btn-outline-warning btn-sm me-1' %>               
+      <% end %>  
+       
+      <% if policy(comment).destroy? %>
         <%= link_to t('global.button.delete'), article_comment_path(article, comment),
           class: 'btn btn-outline-danger btn-sm ',
           data: { turbo_confirm: t('global.dialog.you_sure'), turbo_method: :delete } %>    
+      <% end %>
       </nav> 
   </div>
 </div>
