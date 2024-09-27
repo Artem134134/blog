@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Authorization
   extend ActiveSupport::Concern
 
@@ -5,7 +7,6 @@ module Authorization
     include Pundit::Authorization
 
     rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-  
 
     private
 
@@ -13,5 +14,5 @@ module Authorization
       flash[:danger] = t 'global.flash.not_authorized'
       redirect_to(request.referer || root_path)
     end
-  end  
+  end
 end

@@ -2,8 +2,8 @@
 
 class ContactsController < ApplicationController
   include ContactsHelper
- # include ActionView::RecordIdentifier на будущее dom_id или работа с формами
-  
+  # include ActionView::RecordIdentifier на будущее dom_id или работа с формами
+
   before_action :authenticate_user!, only: %i[new create]
   before_action :authorize_contact!, only: %i[new create]
   after_action :verify_authorized, only: %i[new create] # метод из pundit

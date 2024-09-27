@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UserBulkService < ApplicationService
   attr_reader :archive
 
@@ -26,5 +28,5 @@ class UserBulkService < ApplicationService
                password: cells[2],
                password_confirmation: cells[2]
     end
-  end 
+  end
 end

@@ -1,15 +1,17 @@
-module Admin  
-	class UserPolicy < ApplicationPolicy
-		def create?
+# frozen_string_literal: true
+
+module Admin
+  class UserPolicy < ApplicationPolicy
+    def create?
       user.admin_role?
     end
 
     def update?
-      user.admin_role? 
+      user.admin_role?
     end
 
     def index?
-      user.admin_role? 
+      user.admin_role?
     end
 
     def show?
@@ -19,5 +21,5 @@ module Admin
     def destroy?
       user.admin_role?
     end
-	end
+  end
 end

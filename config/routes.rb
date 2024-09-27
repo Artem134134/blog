@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
+  scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
     devise_for :users
 
     resource  :contacts, only: %i[new create], path_names: { new: '' }
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
 
     namespace :admin do
-      resources  :users
+      resources :users
     end
 
     root to: 'articles#index'

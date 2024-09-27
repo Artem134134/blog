@@ -39,19 +39,19 @@ gem 'jbuilder'
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'bootstrap', '~> 5.3.3'
 gem 'devise'
 gem 'pagy', '~> 9.0.9'
-gem 'bootstrap', '~> 5.3.3'
 gem 'sassc-rails'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'rails-i18n', '~> 7.0.9'
-gem 'rubyzip', '~> 2.3.2'
+gem 'activerecord-import', '~> 1.8.1'
 gem 'caxlsx', '~> 4.1.0'
 gem 'caxlsx_rails', '~> 0.6.4'
+gem 'pundit', '~> 2.4.0'
+gem 'rails-i18n', '~> 7.0.9'
 gem 'rubyXL', '~> 3.4.27'
-gem 'activerecord-import', '~> 1.8.1'
-gem 'pundit', '~> 2.4.0' 
+gem 'rubyzip', '~> 2.3.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
@@ -60,18 +60,18 @@ group :test, :development do
   gem 'capybara', require: false
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.4.3', require: false
+  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'pry-rails'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'web-console'
+  gem 'bullet'
   gem 'rubocop', '~> 1.65', require: false
   gem 'rubocop-performance', '~> 1.21', require: false
   gem 'rubocop-rails', '~> 2.25', require: false
-  gem 'bullet'
+  gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"

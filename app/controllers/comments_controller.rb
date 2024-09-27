@@ -10,13 +10,13 @@ class CommentsController < ApplicationController
   before_action :authorize_comment!, except: %i[index]
   after_action :verify_authorized, except: %i[index] # метод из pundit
 
-  def index
-    
-  end
+  def index; end
 
   def new
     @comment = @article.comments.build
   end
+
+  def edit; end
 
   def create
     @comment = @article.comments.build(create_comment_params)
@@ -25,13 +25,11 @@ class CommentsController < ApplicationController
       flash[:success] = t '.success'
       redirect_to article_path(@article)
     else
-      
+
       flash.now[:warning] = t '.warning'
       render 'articles/show'
     end
   end
-
-  def edit; end
 
   def update
     if @comment.update(update_comment_params)

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  enum role: [:basic, :moderator, :admin, :banned], _suffix: :role
+  enum :role, { basic: 0, moderator: 1, admin: 2, banned: 3 }, suffix: :role
 
   attr_accessor :old_password, :admin_edit
 
@@ -10,15 +10,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :articles, dependent: :destroy 
-  has_many :comments, dependent: :destroy 
+  has_many :articles, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   before_save :set_gravatar_hash, if: :email_changed?
 
   validates :role, presence: true
   validate :password_presence
   validate :correct_old_password, on: :update, if: -> { password.present? && !admin_edit }
-
 
   def guest?
     false
@@ -28,7 +27,7 @@ class User < ApplicationRecord
     obj.user == self
   end
 
-  private 
+  private
 
   def set_gravatar_hash
     return if email.blank?
@@ -40,9 +39,9 @@ class User < ApplicationRecord
   def correct_old_password
     return if old_password.blank?
 
-    unless valid_password?(old_password)
-      errors.add(:old_password, 'is incorrect')
-    end
+    return if valid_password?(old_password)
+
+    errors.add(:old_password, 'is incorrect')
   end
 
   def password_presence

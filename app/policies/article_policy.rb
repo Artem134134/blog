@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ArticlePolicy < ApplicationPolicy
-	def index?
+  def index?
     true
   end
 
