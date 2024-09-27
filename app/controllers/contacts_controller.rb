@@ -12,6 +12,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
+  # rubocop:disable Metrics/AbcSize
   def create
     @contact = Contact.new(contact_params)
 
@@ -25,6 +26,7 @@ class ContactsController < ApplicationController
       render :new
     end
   end
+  # rubocop:enable Metrics/AbcSize
 
   private
 

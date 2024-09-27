@@ -23,6 +23,7 @@ module Admin
 
     def edit; end
 
+    # rubocop:disable Metrics/MethodLength
     def create
       if params[:archive].present?
         UserBulkService.call(params[:archive])
@@ -43,6 +44,7 @@ module Admin
       end
     end
 
+    # rubocop:enable Metrics/MethodLength
     def update
       if @user.update user_params
         flash[:success] = t('admin.update.success', user: @user.username)
@@ -67,6 +69,7 @@ module Admin
                                    :role).merge(admin_edit: true)
     end
 
+    # rubocop:disable Metrics/MethodLength
     def respond_with_zipped_users
       compressed_filestream = Zip::OutputStream.write_buffer do |zos|
         User.order(created_at: :desc).each do |user|
@@ -82,6 +85,7 @@ module Admin
       send_data compressed_filestream.read, filename: 'users.zip'
     end
 
+    # rubocop:enable Metrics/MethodLength
     def set_user!
       @user = User.find params[:id]
     end
