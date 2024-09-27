@@ -12,7 +12,7 @@ gem 'rails'
 gem 'sprockets-rails'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'sqlite3', '~> 2.1.0'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 6.0'
@@ -41,7 +41,7 @@ gem 'jbuilder'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
-gem 'pagy', '~> 9.0.5'
+gem 'pagy', '~> 9.0.9'
 gem 'bootstrap', '~> 5.3.3'
 gem 'sassc-rails'
 
@@ -50,7 +50,8 @@ gem 'rubyzip', '~> 2.3.2'
 gem 'caxlsx', '~> 4.1.0'
 gem 'caxlsx_rails', '~> 0.6.4'
 gem 'rubyXL', '~> 3.4.27'
-gem 'activerecord-import', '~> 1.2'
+gem 'activerecord-import', '~> 1.8.1'
+gem 'pundit', '~> 2.4.0' 
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
@@ -58,7 +59,7 @@ gem 'bootsnap', require: false
 group :test, :development do
   gem 'capybara', require: false
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'factory_bot_rails', require: false
+  gem 'factory_bot_rails', '~> 6.4.3', require: false
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'pry-rails'
