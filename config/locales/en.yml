@@ -36,7 +36,8 @@ en:
       articles: "Articles"
       comments: "Comments"
       contacts: "Contacts"
-      users: "Users"  
+      users: "Users"
+      admin_area: "Admin area" 
   articles:
     index: 
       title: Welcome to Blog!     
@@ -154,4 +155,7 @@ en:
       you_sure: "Are you sure?"
     errors:
       error_email: "Please enter a valid email"
+    flash:
+      not_authorized: "You are not authorized to perform this action!"
+
     text: ""

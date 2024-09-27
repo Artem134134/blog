@@ -36,7 +36,8 @@ ru:
       articles: "Статьи"
       comments: "Комментарии"
       contacts: "Контакты" 
-      users: "Пользователи"    
+      users: "Пользователи" 
+      admin_area: "Админ. зона"   
   articles:
     index:      
       title: "Добро пожаловать в Blog!"  
@@ -154,4 +155,6 @@ ru:
       you_sure: "Вы уверены?"
     errors:
       error_email: "Пожалуйста, введите действительный адрес эл. почты"  
+    flash:
+      not_authorized: "У вас нет прав на выполнение этого действия!"
     text: ""
