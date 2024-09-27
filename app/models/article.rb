@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Article < ApplicationRecord
+  include Authorship
   # dependent: :destroy - удаление комментариев связанных со статьёй!
   has_many :comments, dependent: :destroy
   belongs_to :user

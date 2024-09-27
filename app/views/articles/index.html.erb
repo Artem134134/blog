@@ -1,10 +1,12 @@
 <% currently_at t('global.button.main_page') %>
 <% provide :page_title, t('.title') %>
- 
+
+<% if user_signed_in? %> 
 <div class="mb-0 mt-3">
   <h4><%= t('.header1') %><span class="badge rounded-pill text-bg-secondary"><%= t('.badge1') %></span></h4>
   <p><%= render 'form_article', article: @article %></p>
 </div>
+<% end %>
 
 <h3 class="mb-3 mt-3"><%= t('.header2') %><span class="badge rounded-pill text-bg-secondary"><%= t('.badge2') %></span></h3>
 

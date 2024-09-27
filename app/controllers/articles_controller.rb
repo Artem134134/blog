@@ -3,8 +3,10 @@
 class ArticlesController < ApplicationController
   include ActionView::RecordIdentifier
 
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :authenticate_user!, except: %i[index show] # метод из devise
   before_action :set_article, only: %i[show destroy edit update]
+  before_action :authorize_article!, except: %i[index show]
+  after_action :verify_authorized, except: %i[index show] # метод из pundit
 
   def index
     @article = Article.new
@@ -58,5 +60,9 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find params[:id]
+  end
+
+  def authorize_article!
+    authorize(@article || Article)
   end
 end
