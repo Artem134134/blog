@@ -22,10 +22,15 @@
         </li>
         <li class="nav-item">
             <%= nav_tab t('.terms'), terms_path(@terms), class: 'nav-link px-2', current_page: current_page %>    
-        </li>
+        </li>      
+
+        <% if policy([:admin, :user]).index? %>
+          <li><%= nav_tab t('.admin_area'), admin_users_path,
+            class: 'nav-link px-2', current_page: current_page %></li>
+        <% end %>
       </ul>
 
-      <ul class="nav col-12 col-lg-auto mb-2 mb-md-0 me-3">
+        <ul class="nav col-12 col-lg-auto mb-2 mb-md-0 me-3">
           <li class="dropdown">
             <%= link_to '#', class: 'nav-link px-2 dropdown-toggle text-white',
               data: {"bs-toggle": 'dropdown'} do %>
