@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 module Admin
-	class UsersController < ApplicationController
+	class UsersController < BaseController
 		before_action :authenticate_user! # Проверка аутентификации
 		before_action :set_user!, only: %i[edit update destroy]
+		before_action :authorize_user!
+  after_action :verify_authorized # метод из pundit
 
 		def index 
 			respond_to do |format|
@@ -82,6 +84,10 @@ module Admin
 	  def set_user!
 	  	@user = User.find params[:id]
 	  end
+
+	  def authorize_user!
+    	authorize(@user || User)
+  	end 
 	end
 end
 
