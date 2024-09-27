@@ -13,3 +13,6 @@ db/production.sqlite3
 db/production.sqlite3-shm
 log/production.log
 log/bullet.log
+tmp/cache/assets/sprockets/v4.0.0/
+tmp/cache/assets/sprockets/v4.0.0/*.cache
+
