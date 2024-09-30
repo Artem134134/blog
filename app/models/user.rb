@@ -12,7 +12,8 @@ class User < ApplicationRecord
 
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
-
+  has_many :contacts, dependent: :destroy
+  
   before_save :set_gravatar_hash, if: :email_changed?
 
   validates :role, presence: true
