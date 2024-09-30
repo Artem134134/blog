@@ -18,9 +18,15 @@
       </div>
        
       <div class="row">     
-        <nav class="d-flex justify-content-end mt-0 mb-3">    
+        <nav class="d-flex justify-content-end mt-0 mb-3"> 
+        <% if policy(@contact).create? %>   
           <%= f.submit t('global.button.submit'), class: 'btn btn-outline-primary btn-sm me-1' %>
-          <%= link_to t('.button.cancel'), new_contacts_path, class: 'btn btn-outline-light btn-sm me-1' %> 
+        <% end %>
+
+        <% if policy(@contact).create? %>
+          <%= link_to t('.button.cancel'), new_contacts_path, class: 'btn btn-outline-light btn-sm me-1' %>
+        <% end %> 
+          
           <%= link_to t('global.button.main_page'), articles_path, class: 'btn btn-outline-secondary btn-sm' %>           
         </nav>
       </div>
