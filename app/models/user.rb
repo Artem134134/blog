@@ -40,9 +40,9 @@ class User < ApplicationRecord
   def correct_old_password
     return if old_password.blank?
 
-    return if valid_password?(old_password)
-
-    errors.add(:old_password, 'is incorrect')
+    if !valid_password?(old_password) 
+      errors.add(:old_password, 'is incorrect')
+    end
   end
 
   def password_presence
