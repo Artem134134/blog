@@ -10,14 +10,14 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def create?
-    !user.guest?
+    !user.banned_role? && !user.guest?  
   end
 
   def update?
-    user.admin_role? || user.moderator_role? || user.author?(record)
+    (user.admin_role? || user.moderator_role? || user.author?(record)) && !user.banned_role?
   end
 
   def destroy?
-    user.admin_role? || user.moderator_role? || user.author?(record)
+    (user.admin_role? || user.moderator_role? || user.author?(record)) && !user.banned_role?
   end
 end
