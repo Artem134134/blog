@@ -2,7 +2,7 @@
 
 class ContactPolicy < ApplicationPolicy
   def create?
-    !user_banned_role && !user.guest?
+    !user.banned_role? && !user.guest?   
   end
 
   #
