@@ -15,14 +15,14 @@ class ContactsController < ApplicationController
   # rubocop:disable Metrics/AbcSize
   def create
     @contact = Contact.new(contact_params)
+    @contact.user = current_user # Устанавливаем текущего пользователя
 
-    if @contact.valid? && valid_email?(@contact.email)
+    if @contact.valid?
       @contact.save
       flash[:success] = t '.success'
-      redirect_to root_path
+      redirect_to new_contacts_path
     else
       flash.now[:warning] = t '.warning'
-      @invalid_email = !valid_email?(@contact.email)
       render :new
     end
   end
@@ -31,7 +31,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:email, :message)
+    params.require(:contact).permit(:message).merge(email: current_user.email)
   end
 
   def authorize_contact!
