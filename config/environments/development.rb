@@ -5,7 +5,7 @@ require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   config.after_initialize do
-    Bullet.enable        = false
+    Bullet.enable        = true
     Bullet.alert         = true
     Bullet.bullet_logger = true
     Bullet.console       = true
@@ -50,7 +50,12 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
   config.action_mailer.raise_delivery_errors = false
+
 
   config.action_mailer.perform_caching = false
 
