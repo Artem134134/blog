@@ -3,7 +3,7 @@
 
 <h2 class="text-center"><%= t('.change_pass') %></h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_with(model: resource, url: password_path(resource_name), method: :put, data: { turbo: false }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 
@@ -17,7 +17,7 @@
    </div>
   </div>
 
-  <div class="mt-3 mb-2 row">
+  <div class="mt-3 mb-3 row">
     <%= f.label :password_confirmation, t('.label2') %>
     <div class="col-sm-10"> 
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>

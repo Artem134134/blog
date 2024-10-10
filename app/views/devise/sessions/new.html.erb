@@ -1,7 +1,9 @@
 <% currently_at t('.login_to_account') %>
 <% provide :page_title, t('.login_to_account') %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+<%= form_with(model: resource, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>  
   <div class="mt-4 mb-3 row">    
     <%= f.label :email, class: 'fst-italic col-sm-2 col-form-label' %>
 
