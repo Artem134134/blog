@@ -52,6 +52,7 @@ gem 'pundit', '~> 2.4.0'
 gem 'rails-i18n', '~> 7.0.9'
 gem 'rubyXL', '~> 3.4.27'
 gem 'rubyzip', '~> 2.3.2'
+gem 'sidekiq', '~> 7.3.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
